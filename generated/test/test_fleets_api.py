@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.api.fleets_api import FleetsApi
+from phobos_torizon_io_api.api.fleets_api import FleetsApi
 
 
 class TestFleetsApi(unittest.TestCase):

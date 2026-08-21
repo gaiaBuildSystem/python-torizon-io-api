@@ -35,7 +35,7 @@ pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
 
 Then import the package:
 ```python
-import torizon_io_api
+import phobos_torizon_io_api
 ```
 
 ### Setuptools
@@ -49,7 +49,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import torizon_io_api
+import phobos_torizon_io_api
 ```
 
 ### Tests
@@ -62,13 +62,13 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 ```python
 
-import torizon_io_api
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -78,19 +78,19 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DeviceMetricsApi(api_client)
-    device_uuid = 'device_uuid_example' # str |
-    metrics = ['metrics_example'] # List[str] |
-    var_from = 56 # int |
-    to = 56 # int |
+    api_instance = phobos_torizon_io_api.DeviceMetricsApi(api_client)
+    device_uuid = 'device_uuid_example' # str | 
+    metrics = ['metrics_example'] # List[str] | 
+    var_from = 56 # int | 
+    to = 56 # int | 
     raw_datapoints = 56 # int |  (optional)
     total_buckets = 56 # int |  (optional)
 
@@ -125,7 +125,7 @@ Class | Method | HTTP request | Description
 *DevicesApi* | [**get_devices_notes_deviceuuid**](docs/DevicesApi.md#get_devices_notes_deviceuuid) | **GET** /devices/notes/{deviceUuid} | Get the device notes for a specific device
 *DevicesApi* | [**get_devices_packages**](docs/DevicesApi.md#get_devices_packages) | **GET** /devices/packages | Get information about the installed packages for many devices
 *DevicesApi* | [**get_devices_packages_deviceuuid**](docs/DevicesApi.md#get_devices_packages_deviceuuid) | **GET** /devices/packages/{deviceUuid} | Get information about the installed packages for a single device
-*DevicesApi* | [**get_devices_tags_deviceuuid**](docs/DevicesApi.md#get_devices_tags_deviceuuid) | **GET** /devices/tags/{deviceUuid} |
+*DevicesApi* | [**get_devices_tags_deviceuuid**](docs/DevicesApi.md#get_devices_tags_deviceuuid) | **GET** /devices/tags/{deviceUuid} | 
 *DevicesApi* | [**get_devices_token**](docs/DevicesApi.md#get_devices_token) | **GET** /devices/token | Retrieve device provisioning token
 *DevicesApi* | [**get_devices_uptane_deviceuuid_assignment**](docs/DevicesApi.md#get_devices_uptane_deviceuuid_assignment) | **GET** /devices/uptane/{deviceUuid}/assignment | Show detailed information about the currently-assigned update for a single device
 *DevicesApi* | [**get_devices_uptane_deviceuuid_components**](docs/DevicesApi.md#get_devices_uptane_deviceuuid_components) | **GET** /devices/uptane/{deviceUuid}/components | Get a list of the software components reported by a single device

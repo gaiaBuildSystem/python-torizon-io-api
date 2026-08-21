@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.update_request import UpdateRequest
+from phobos_torizon_io_api.models.update_request import UpdateRequest
 
 class TestUpdateRequest(unittest.TestCase):
     """UpdateRequest unit test stubs"""
@@ -39,7 +39,7 @@ class TestUpdateRequest(unittest.TestCase):
                     ''
                     ],
                 custom = {
-                    'key' : torizon_io_api.models.custom_update_data.CustomUpdateData(
+                    'key' : phobos_torizon_io_api.models.custom_update_data.CustomUpdateData(
                         uri = '', 
                         metadata = null, )
                     },

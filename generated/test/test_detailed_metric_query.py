@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.detailed_metric_query import DetailedMetricQuery
+from phobos_torizon_io_api.models.detailed_metric_query import DetailedMetricQuery
 
 class TestDetailedMetricQuery(unittest.TestCase):
     """DetailedMetricQuery unit test stubs"""

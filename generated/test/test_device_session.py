@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.device_session import DeviceSession
+from phobos_torizon_io_api.models.device_session import DeviceSession
 
 class TestDeviceSession(unittest.TestCase):
     """DeviceSession unit test stubs"""
@@ -35,7 +35,7 @@ class TestDeviceSession(unittest.TestCase):
         model = DeviceSession()
         if include_optional:
             return DeviceSession(
-                ssh = torizon_io_api.models.ssh_session.SshSession(
+                ssh = phobos_torizon_io_api.models.ssh_session.SshSession(
                     authorized_pub_keys = [
                         ''
                         ], 
@@ -47,7 +47,7 @@ class TestDeviceSession(unittest.TestCase):
             )
         else:
             return DeviceSession(
-                ssh = torizon_io_api.models.ssh_session.SshSession(
+                ssh = phobos_torizon_io_api.models.ssh_session.SshSession(
                     authorized_pub_keys = [
                         ''
                         ], 

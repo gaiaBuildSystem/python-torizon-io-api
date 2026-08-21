@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.ecu_info_response import EcuInfoResponse
+from phobos_torizon_io_api.models.ecu_info_response import EcuInfoResponse
 
 class TestEcuInfoResponse(unittest.TestCase):
     """EcuInfoResponse unit test stubs"""
@@ -38,10 +38,10 @@ class TestEcuInfoResponse(unittest.TestCase):
                 id = '0',
                 hardware_id = '',
                 primary = True,
-                image = torizon_io_api.models.ecu_info_image.EcuInfoImage(
+                image = phobos_torizon_io_api.models.ecu_info_image.EcuInfoImage(
                     filepath = '', 
                     size = 56, 
-                    hash = torizon_io_api.models.hashes.Hashes(
+                    hash = phobos_torizon_io_api.models.hashes.Hashes(
                         sha256 = '', ), )
             )
         else:
@@ -49,10 +49,10 @@ class TestEcuInfoResponse(unittest.TestCase):
                 id = '0',
                 hardware_id = '',
                 primary = True,
-                image = torizon_io_api.models.ecu_info_image.EcuInfoImage(
+                image = phobos_torizon_io_api.models.ecu_info_image.EcuInfoImage(
                     filepath = '', 
                     size = 56, 
-                    hash = torizon_io_api.models.hashes.Hashes(
+                    hash = phobos_torizon_io_api.models.hashes.Hashes(
                         sha256 = '', ), ),
         )
         """

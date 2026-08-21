@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.target_items_sort import TargetItemsSort
+from phobos_torizon_io_api.models.target_items_sort import TargetItemsSort
 
 class TestTargetItemsSort(unittest.TestCase):
     """TargetItemsSort unit test stubs"""

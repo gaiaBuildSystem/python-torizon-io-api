@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.pagination_result_user_session import PaginationResultUserSession
+from phobos_torizon_io_api.models.pagination_result_user_session import PaginationResultUserSession
 
 class TestPaginationResultUserSession(unittest.TestCase):
     """PaginationResultUserSession unit test stubs"""
@@ -36,10 +36,10 @@ class TestPaginationResultUserSession(unittest.TestCase):
         if include_optional:
             return PaginationResultUserSession(
                 values = [
-                    torizon_io_api.models.user_session.UserSession(
+                    phobos_torizon_io_api.models.user_session.UserSession(
                         device_id = '', 
-                        session = torizon_io_api.models.device_session.DeviceSession(
-                            ssh = torizon_io_api.models.ssh_session.SshSession(
+                        session = phobos_torizon_io_api.models.device_session.DeviceSession(
+                            ssh = phobos_torizon_io_api.models.ssh_session.SshSession(
                                 authorized_pub_keys = [
                                     ''
                                     ], 

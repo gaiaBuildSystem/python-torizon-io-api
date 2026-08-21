@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.custom_update_data import CustomUpdateData
+from phobos_torizon_io_api.models.custom_update_data import CustomUpdateData
 
 class TestCustomUpdateData(unittest.TestCase):
     """CustomUpdateData unit test stubs"""

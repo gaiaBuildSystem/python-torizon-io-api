@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.hashes import Hashes
+from phobos_torizon_io_api.models.hashes import Hashes
 
 class TestHashes(unittest.TestCase):
     """Hashes unit test stubs"""

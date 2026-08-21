@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.device_info_extended import DeviceInfoExtended
+from phobos_torizon_io_api.models.device_info_extended import DeviceInfoExtended
 
 class TestDeviceInfoExtended(unittest.TestCase):
     """DeviceInfoExtended unit test stubs"""
@@ -46,7 +46,7 @@ class TestDeviceInfoExtended(unittest.TestCase):
                 hibernated = True,
                 last_updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 device_fleets = [
-                    torizon_io_api.models.fleet.Fleet(
+                    phobos_torizon_io_api.models.fleet.Fleet(
                         id = '', 
                         name = '', 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -54,9 +54,9 @@ class TestDeviceInfoExtended(unittest.TestCase):
                         expression = '', )
                     ],
                 device_packages = [
-                    torizon_io_api.models.installed_package.InstalledPackage(
+                    phobos_torizon_io_api.models.installed_package.InstalledPackage(
                         component = '', 
-                        installed = torizon_io_api.models.package.Package(
+                        installed = phobos_torizon_io_api.models.package.Package(
                             name = '', 
                             version = '', 
                             package_id = '', 
@@ -77,7 +77,7 @@ class TestDeviceInfoExtended(unittest.TestCase):
                 tags = {
                     'key' : '/'
                     },
-                network_info = torizon_io_api.models.network_info.NetworkInfo(
+                network_info = phobos_torizon_io_api.models.network_info.NetworkInfo(
                     device_uuid = '', 
                     local_ip_v4 = '', 
                     hostname = '', 
@@ -95,7 +95,7 @@ class TestDeviceInfoExtended(unittest.TestCase):
                 tags = {
                     'key' : '/'
                     },
-                network_info = torizon_io_api.models.network_info.NetworkInfo(
+                network_info = phobos_torizon_io_api.models.network_info.NetworkInfo(
                     device_uuid = '', 
                     local_ip_v4 = '', 
                     hostname = '', 

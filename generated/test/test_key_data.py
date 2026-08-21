@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.key_data import KeyData
+from phobos_torizon_io_api.models.key_data import KeyData
 
 class TestKeyData(unittest.TestCase):
     """KeyData unit test stubs"""

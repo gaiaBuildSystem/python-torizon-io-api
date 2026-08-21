@@ -12,7 +12,7 @@ stages:
   script:
    - pip install -r requirements.txt
    - pip install -r test-requirements.txt
-   - pytest --cov=torizon_io_api
+   - pytest --cov=phobos_torizon_io_api
 
 pytest-3.10:
   extends: .pytest

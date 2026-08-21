@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.device_id import DeviceId
+from phobos_torizon_io_api.models.device_id import DeviceId
 
 class TestDeviceId(unittest.TestCase):
     """DeviceId unit test stubs"""

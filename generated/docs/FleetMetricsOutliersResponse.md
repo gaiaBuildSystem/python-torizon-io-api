@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.fleet_metrics_outliers_response import FleetMetricsOutliersResponse
+from phobos_torizon_io_api.models.fleet_metrics_outliers_response import FleetMetricsOutliersResponse
 
 # TODO update the JSON string below
 json = "{}"

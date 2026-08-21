@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.series_meta import SeriesMeta
+from phobos_torizon_io_api.models.series_meta import SeriesMeta
 
 class TestSeriesMeta(unittest.TestCase):
     """SeriesMeta unit test stubs"""
@@ -35,7 +35,7 @@ class TestSeriesMeta(unittest.TestCase):
         model = SeriesMeta()
         if include_optional:
             return SeriesMeta(
-                aggregation = torizon_io_api.models.time_aggregation.TimeAggregation(
+                aggregation = phobos_torizon_io_api.models.time_aggregation.TimeAggregation(
                     bucket = '', 
                     method = 'last', ),
                 device_ids = [
@@ -44,7 +44,7 @@ class TestSeriesMeta(unittest.TestCase):
             )
         else:
             return SeriesMeta(
-                aggregation = torizon_io_api.models.time_aggregation.TimeAggregation(
+                aggregation = phobos_torizon_io_api.models.time_aggregation.TimeAggregation(
                     bucket = '', 
                     method = 'last', ),
         )

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.public_keys import PublicKeys
+from phobos_torizon_io_api.models.public_keys import PublicKeys
 
 # TODO update the JSON string below
 json = "{}"

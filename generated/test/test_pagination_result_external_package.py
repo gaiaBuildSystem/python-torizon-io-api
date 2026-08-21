@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.pagination_result_external_package import PaginationResultExternalPackage
+from phobos_torizon_io_api.models.pagination_result_external_package import PaginationResultExternalPackage
 
 class TestPaginationResultExternalPackage(unittest.TestCase):
     """PaginationResultExternalPackage unit test stubs"""
@@ -36,7 +36,7 @@ class TestPaginationResultExternalPackage(unittest.TestCase):
         if include_optional:
             return PaginationResultExternalPackage(
                 values = [
-                    torizon_io_api.models.external_package.ExternalPackage(
+                    phobos_torizon_io_api.models.external_package.ExternalPackage(
                         name = '', 
                         delegation_origin = '', 
                         version = '', 

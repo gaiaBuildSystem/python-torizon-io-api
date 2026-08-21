@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.device_create_req import DeviceCreateReq
+from phobos_torizon_io_api.models.device_create_req import DeviceCreateReq
 
 # TODO update the JSON string below
 json = "{}"

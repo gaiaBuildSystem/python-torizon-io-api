@@ -13,7 +13,7 @@ docker run --rm \
   -i /local/torizon-2.0-openapi.yaml \
   -g python \
   -o /local/generated \
-  --additional-properties packageName=torizon_io_api \
+  --additional-properties packageName=phobos_torizon_io_api \
   --additional-properties packageVersion=0.0.7 \
   --additional-properties projectName=phobos-torizon-io-api
 

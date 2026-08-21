@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.edit_package import EditPackage
+from phobos_torizon_io_api.models.edit_package import EditPackage
 
 class TestEditPackage(unittest.TestCase):
     """EditPackage unit test stubs"""

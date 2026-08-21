@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.public_keys import PublicKeys
+from phobos_torizon_io_api.models.public_keys import PublicKeys
 
 class TestPublicKeys(unittest.TestCase):
     """PublicKeys unit test stubs"""
@@ -36,7 +36,7 @@ class TestPublicKeys(unittest.TestCase):
         if include_optional:
             return PublicKeys(
                 keys = {
-                    'key' : torizon_io_api.models.key_data.KeyData(
+                    'key' : phobos_torizon_io_api.models.key_data.KeyData(
                         pubkey = '', 
                         meta = null, )
                     }
@@ -44,7 +44,7 @@ class TestPublicKeys(unittest.TestCase):
         else:
             return PublicKeys(
                 keys = {
-                    'key' : torizon_io_api.models.key_data.KeyData(
+                    'key' : phobos_torizon_io_api.models.key_data.KeyData(
                         pubkey = '', 
                         meta = null, )
                     },

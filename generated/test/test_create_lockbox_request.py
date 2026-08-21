@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.create_lockbox_request import CreateLockboxRequest
+from phobos_torizon_io_api.models.create_lockbox_request import CreateLockboxRequest
 
 class TestCreateLockboxRequest(unittest.TestCase):
     """CreateLockboxRequest unit test stubs"""
@@ -39,7 +39,7 @@ class TestCreateLockboxRequest(unittest.TestCase):
                     ''
                     ],
                 custom = {
-                    'key' : torizon_io_api.models.custom_update_data.CustomUpdateData(
+                    'key' : phobos_torizon_io_api.models.custom_update_data.CustomUpdateData(
                         uri = '', 
                         metadata = null, )
                     },

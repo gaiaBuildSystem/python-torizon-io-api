@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.fleet_metrics_outliers_request import FleetMetricsOutliersRequest
+from phobos_torizon_io_api.models.fleet_metrics_outliers_request import FleetMetricsOutliersRequest
 
 # TODO update the JSON string below
 json = "{}"

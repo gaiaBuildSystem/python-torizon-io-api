@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.delegation_info import DelegationInfo
+from phobos_torizon_io_api.models.delegation_info import DelegationInfo
 
 class TestDelegationInfo(unittest.TestCase):
     """DelegationInfo unit test stubs"""

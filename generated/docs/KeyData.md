@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.key_data import KeyData
+from phobos_torizon_io_api.models.key_data import KeyData
 
 # TODO update the JSON string below
 json = "{}"

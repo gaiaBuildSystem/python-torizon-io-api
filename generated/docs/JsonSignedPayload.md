@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.json_signed_payload import JsonSignedPayload
+from phobos_torizon_io_api.models.json_signed_payload import JsonSignedPayload
 
 # TODO update the JSON string below
 json = "{}"

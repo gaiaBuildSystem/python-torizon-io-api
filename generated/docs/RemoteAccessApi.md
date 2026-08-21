@@ -1,4 +1,4 @@
-# torizon_io_api.RemoteAccessApi
+# phobos_torizon_io_api.RemoteAccessApi
 
 All URIs are relative to *https://app.torizon.io/api/v2*
 
@@ -30,13 +30,13 @@ Delete a remote access session for a device
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -46,14 +46,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.RemoteAccessApi(api_client)
+    api_instance = phobos_torizon_io_api.RemoteAccessApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
 
     try:
@@ -107,13 +107,13 @@ Remove accepted ip address
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -123,14 +123,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.RemoteAccessApi(api_client)
+    api_instance = phobos_torizon_io_api.RemoteAccessApi(api_client)
     ip_address = 'ip_address_example' # str | 
 
     try:
@@ -184,13 +184,13 @@ Remove ssh public key from user
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -200,14 +200,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.RemoteAccessApi(api_client)
+    api_instance = phobos_torizon_io_api.RemoteAccessApi(api_client)
     key_id = 'key_id_example' # str | 
 
     try:
@@ -261,14 +261,14 @@ Fetch remote access info for a device
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.device_info import DeviceInfo
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.device_info import DeviceInfo
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -278,14 +278,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.RemoteAccessApi(api_client)
+    api_instance = phobos_torizon_io_api.RemoteAccessApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
 
     try:
@@ -341,14 +341,14 @@ get a remote access session for a device
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.device_session import DeviceSession
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.device_session import DeviceSession
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -358,14 +358,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.RemoteAccessApi(api_client)
+    api_instance = phobos_torizon_io_api.RemoteAccessApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
 
     try:
@@ -423,13 +423,13 @@ These IP addresses will be exempt from normal rate limiting by the server.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -439,14 +439,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.RemoteAccessApi(api_client)
+    api_instance = phobos_torizon_io_api.RemoteAccessApi(api_client)
 
     try:
         # Retrieve list of accepted ip addresses
@@ -498,14 +498,14 @@ Fetch all remote-access public keys registered to a user
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.public_keys import PublicKeys
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.public_keys import PublicKeys
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -515,14 +515,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.RemoteAccessApi(api_client)
+    api_instance = phobos_torizon_io_api.RemoteAccessApi(api_client)
 
     try:
         # Fetch all remote-access public keys registered to a user
@@ -574,14 +574,14 @@ Fetch all sessions (and their related deviceId) for a user
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.pagination_result_user_session import PaginationResultUserSession
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.pagination_result_user_session import PaginationResultUserSession
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -591,14 +591,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.RemoteAccessApi(api_client)
+    api_instance = phobos_torizon_io_api.RemoteAccessApi(api_client)
     offset = 56 # int |  (optional)
     limit = 56 # int |  (optional)
 
@@ -662,14 +662,14 @@ Create new remote access session for device
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.create_session_request import CreateSessionRequest
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.create_session_request import CreateSessionRequest
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -679,16 +679,16 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.RemoteAccessApi(api_client)
+    api_instance = phobos_torizon_io_api.RemoteAccessApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
-    create_session_request = torizon_io_api.CreateSessionRequest() # CreateSessionRequest | 
+    create_session_request = phobos_torizon_io_api.CreateSessionRequest() # CreateSessionRequest | 
 
     try:
         # Create new remote access session for device
@@ -746,14 +746,14 @@ These IP addresses will be exempt from normal rate limiting by the server.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.ip_address_request import IpAddressRequest
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.ip_address_request import IpAddressRequest
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -763,15 +763,15 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.RemoteAccessApi(api_client)
-    ip_address_request = torizon_io_api.IpAddressRequest() # IpAddressRequest | 
+    api_instance = phobos_torizon_io_api.RemoteAccessApi(api_client)
+    ip_address_request = phobos_torizon_io_api.IpAddressRequest() # IpAddressRequest | 
 
     try:
         # Add new ip to list of accepted ip addresses
@@ -825,14 +825,14 @@ Register an ssh public key to user
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.key_data import KeyData
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.key_data import KeyData
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -842,15 +842,15 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.RemoteAccessApi(api_client)
-    key_data = torizon_io_api.KeyData() # KeyData | 
+    api_instance = phobos_torizon_io_api.RemoteAccessApi(api_client)
+    key_data = phobos_torizon_io_api.KeyData() # KeyData | 
 
     try:
         # Register an ssh public key to user

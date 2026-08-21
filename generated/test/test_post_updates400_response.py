@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.post_updates400_response import PostUpdates400Response
+from phobos_torizon_io_api.models.post_updates400_response import PostUpdates400Response
 
 class TestPostUpdates400Response(unittest.TestCase):
     """PostUpdates400Response unit test stubs"""

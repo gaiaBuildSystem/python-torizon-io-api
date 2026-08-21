@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.device_create_req import DeviceCreateReq
+from phobos_torizon_io_api.models.device_create_req import DeviceCreateReq
 
 class TestDeviceCreateReq(unittest.TestCase):
     """DeviceCreateReq unit test stubs"""

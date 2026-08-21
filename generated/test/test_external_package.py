@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.external_package import ExternalPackage
+from phobos_torizon_io_api.models.external_package import ExternalPackage
 
 class TestExternalPackage(unittest.TestCase):
     """ExternalPackage unit test stubs"""

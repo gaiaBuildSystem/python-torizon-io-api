@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.pagination_result_refined import PaginationResultRefined
+from phobos_torizon_io_api.models.pagination_result_refined import PaginationResultRefined
 
 class TestPaginationResultRefined(unittest.TestCase):
     """PaginationResultRefined unit test stubs"""

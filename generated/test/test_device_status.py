@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.device_status import DeviceStatus
+from phobos_torizon_io_api.models.device_status import DeviceStatus
 
 class TestDeviceStatus(unittest.TestCase):
     """DeviceStatus unit test stubs"""

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.outlier_values import OutlierValues
+from phobos_torizon_io_api.models.outlier_values import OutlierValues
 
 # TODO update the JSON string below
 json = "{}"

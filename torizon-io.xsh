@@ -14,7 +14,7 @@ import builtins
 import requests
 import traceback
 from typing import List
-import torizon_io_api as torizon_cloud
+import phobos_torizon_io_api as torizon_cloud
 from torizon_templates_utils.errors import Error,Error_Out,last_return_code
 from torizon_templates_utils.colors import Color,BgColor,print
 

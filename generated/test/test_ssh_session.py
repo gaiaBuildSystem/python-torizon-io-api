@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.ssh_session import SshSession
+from phobos_torizon_io_api.models.ssh_session import SshSession
 
 class TestSshSession(unittest.TestCase):
     """SshSession unit test stubs"""

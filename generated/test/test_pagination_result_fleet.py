@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.pagination_result_fleet import PaginationResultFleet
+from phobos_torizon_io_api.models.pagination_result_fleet import PaginationResultFleet
 
 class TestPaginationResultFleet(unittest.TestCase):
     """PaginationResultFleet unit test stubs"""
@@ -36,7 +36,7 @@ class TestPaginationResultFleet(unittest.TestCase):
         if include_optional:
             return PaginationResultFleet(
                 values = [
-                    torizon_io_api.models.fleet.Fleet(
+                    phobos_torizon_io_api.models.fleet.Fleet(
                         id = '', 
                         name = '', 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

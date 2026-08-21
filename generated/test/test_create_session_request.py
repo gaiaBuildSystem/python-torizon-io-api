@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.create_session_request import CreateSessionRequest
+from phobos_torizon_io_api.models.create_session_request import CreateSessionRequest
 
 class TestCreateSessionRequest(unittest.TestCase):
     """CreateSessionRequest unit test stubs"""

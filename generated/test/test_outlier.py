@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.outlier import Outlier
+from phobos_torizon_io_api.models.outlier import Outlier
 
 class TestOutlier(unittest.TestCase):
     """Outlier unit test stubs"""

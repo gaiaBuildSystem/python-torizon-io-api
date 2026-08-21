@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.ecu_info_image import EcuInfoImage
+from phobos_torizon_io_api.models.ecu_info_image import EcuInfoImage
 
 class TestEcuInfoImage(unittest.TestCase):
     """EcuInfoImage unit test stubs"""
@@ -37,14 +37,14 @@ class TestEcuInfoImage(unittest.TestCase):
             return EcuInfoImage(
                 filepath = '',
                 size = 56,
-                hash = torizon_io_api.models.hashes.Hashes(
+                hash = phobos_torizon_io_api.models.hashes.Hashes(
                     sha256 = '', )
             )
         else:
             return EcuInfoImage(
                 filepath = '',
                 size = 56,
-                hash = torizon_io_api.models.hashes.Hashes(
+                hash = phobos_torizon_io_api.models.hashes.Hashes(
                     sha256 = '', ),
         )
         """

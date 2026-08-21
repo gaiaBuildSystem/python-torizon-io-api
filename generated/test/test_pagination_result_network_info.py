@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.pagination_result_network_info import PaginationResultNetworkInfo
+from phobos_torizon_io_api.models.pagination_result_network_info import PaginationResultNetworkInfo
 
 class TestPaginationResultNetworkInfo(unittest.TestCase):
     """PaginationResultNetworkInfo unit test stubs"""
@@ -36,7 +36,7 @@ class TestPaginationResultNetworkInfo(unittest.TestCase):
         if include_optional:
             return PaginationResultNetworkInfo(
                 values = [
-                    torizon_io_api.models.network_info.NetworkInfo(
+                    phobos_torizon_io_api.models.network_info.NetworkInfo(
                         device_uuid = '', 
                         local_ip_v4 = '', 
                         hostname = '', 

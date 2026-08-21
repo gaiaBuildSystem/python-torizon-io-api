@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.simple_device_info import SimpleDeviceInfo
+from phobos_torizon_io_api.models.simple_device_info import SimpleDeviceInfo
 
 class TestSimpleDeviceInfo(unittest.TestCase):
     """SimpleDeviceInfo unit test stubs"""

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.upstream_endpoint_error_repr import UpstreamEndpointErrorRepr
+from phobos_torizon_io_api.models.upstream_endpoint_error_repr import UpstreamEndpointErrorRepr
 
 # TODO update the JSON string below
 json = "{}"

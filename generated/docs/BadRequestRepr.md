@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.bad_request_repr import BadRequestRepr
+from phobos_torizon_io_api.models.bad_request_repr import BadRequestRepr
 
 # TODO update the JSON string below
 json = "{}"

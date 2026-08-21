@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.pagination_result_device_packages import PaginationResultDevicePackages
+from phobos_torizon_io_api.models.pagination_result_device_packages import PaginationResultDevicePackages
 
 class TestPaginationResultDevicePackages(unittest.TestCase):
     """PaginationResultDevicePackages unit test stubs"""
@@ -36,12 +36,12 @@ class TestPaginationResultDevicePackages(unittest.TestCase):
         if include_optional:
             return PaginationResultDevicePackages(
                 values = [
-                    torizon_io_api.models.device_packages.DevicePackages(
+                    phobos_torizon_io_api.models.device_packages.DevicePackages(
                         device_uuid = '', 
                         installed_packages = [
-                            torizon_io_api.models.installed_package.InstalledPackage(
+                            phobos_torizon_io_api.models.installed_package.InstalledPackage(
                                 component = '', 
-                                installed = torizon_io_api.models.package.Package(
+                                installed = phobos_torizon_io_api.models.package.Package(
                                     name = '', 
                                     version = '', 
                                     package_id = '', 

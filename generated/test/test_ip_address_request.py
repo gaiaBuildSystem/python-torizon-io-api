@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.ip_address_request import IpAddressRequest
+from phobos_torizon_io_api.models.ip_address_request import IpAddressRequest
 
 class TestIpAddressRequest(unittest.TestCase):
     """IpAddressRequest unit test stubs"""

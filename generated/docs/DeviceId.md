@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.device_id import DeviceId
+from phobos_torizon_io_api.models.device_id import DeviceId
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.queue_response import QueueResponse
+from phobos_torizon_io_api.models.queue_response import QueueResponse
 
 class TestQueueResponse(unittest.TestCase):
     """QueueResponse unit test stubs"""
@@ -37,11 +37,11 @@ class TestQueueResponse(unittest.TestCase):
             return QueueResponse(
                 correlation_id = '',
                 targets = {
-                    'key' : torizon_io_api.models.target_image.TargetImage(
-                        image = torizon_io_api.models.image.Image(
+                    'key' : phobos_torizon_io_api.models.target_image.TargetImage(
+                        image = phobos_torizon_io_api.models.image.Image(
                             filepath = '', 
-                            fileinfo = torizon_io_api.models.file_info.FileInfo(
-                                hashes = torizon_io_api.models.hashes.Hashes(
+                            fileinfo = phobos_torizon_io_api.models.file_info.FileInfo(
+                                hashes = phobos_torizon_io_api.models.hashes.Hashes(
                                     sha256 = '', ), 
                                 length = 56, ), ), 
                         uri = '', 
@@ -53,11 +53,11 @@ class TestQueueResponse(unittest.TestCase):
             return QueueResponse(
                 correlation_id = '',
                 targets = {
-                    'key' : torizon_io_api.models.target_image.TargetImage(
-                        image = torizon_io_api.models.image.Image(
+                    'key' : phobos_torizon_io_api.models.target_image.TargetImage(
+                        image = phobos_torizon_io_api.models.image.Image(
                             filepath = '', 
-                            fileinfo = torizon_io_api.models.file_info.FileInfo(
-                                hashes = torizon_io_api.models.hashes.Hashes(
+                            fileinfo = phobos_torizon_io_api.models.file_info.FileInfo(
+                                hashes = phobos_torizon_io_api.models.hashes.Hashes(
                                     sha256 = '', ), 
                                 length = 56, ), ), 
                         uri = '', 

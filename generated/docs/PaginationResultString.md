@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.pagination_result_string import PaginationResultString
+from phobos_torizon_io_api.models.pagination_result_string import PaginationResultString
 
 # TODO update the JSON string below
 json = "{}"

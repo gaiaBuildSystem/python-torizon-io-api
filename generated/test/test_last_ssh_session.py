@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.last_ssh_session import LastSshSession
+from phobos_torizon_io_api.models.last_ssh_session import LastSshSession
 
 class TestLastSshSession(unittest.TestCase):
     """LastSshSession unit test stubs"""

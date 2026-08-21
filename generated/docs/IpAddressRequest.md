@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.ip_address_request import IpAddressRequest
+from phobos_torizon_io_api.models.ip_address_request import IpAddressRequest
 
 # TODO update the JSON string below
 json = "{}"

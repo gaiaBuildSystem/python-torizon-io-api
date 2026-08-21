@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.api.packages_api import PackagesApi
+from phobos_torizon_io_api.api.packages_api import PackagesApi
 
 
 class TestPackagesApi(unittest.TestCase):

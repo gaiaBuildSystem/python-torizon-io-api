@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.device_info_extended import DeviceInfoExtended
+from phobos_torizon_io_api.models.device_info_extended import DeviceInfoExtended
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.bad_request_repr import BadRequestRepr
+from phobos_torizon_io_api.models.bad_request_repr import BadRequestRepr
 
 class TestBadRequestRepr(unittest.TestCase):
     """BadRequestRepr unit test stubs"""

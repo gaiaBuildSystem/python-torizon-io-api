@@ -1,4 +1,4 @@
-# torizon_io_api.DevicesApi
+# phobos_torizon_io_api.DevicesApi
 
 All URIs are relative to *https://app.torizon.io/api/v2*
 
@@ -40,13 +40,13 @@ to connect to the server.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -56,14 +56,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
 
     try:
@@ -141,14 +141,14 @@ filter parameters you specify will be returned. Available filter parameters:
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.pagination_result_device_info_basic import PaginationResultDeviceInfoBasic
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.pagination_result_device_info_basic import PaginationResultDeviceInfoBasic
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -158,21 +158,21 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     offset = 56 # int |  (optional)
     limit = 56 # int |  (optional)
     device_uuid = ['device_uuid_example'] # List[str] |  (optional)
     device_id = ['device_id_example'] # List[str] |  (optional)
     name_contains = 'name_contains_example' # str |  (optional)
     hibernated = True # bool |  (optional)
-    status = torizon_io_api.DeviceStatus() # DeviceStatus |  (optional)
+    status = phobos_torizon_io_api.DeviceStatus() # DeviceStatus |  (optional)
     activated_after = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     activated_before = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     last_seen_start = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
@@ -182,8 +182,8 @@ with torizon_io_api.ApiClient(configuration) as api_client:
     hardware_ids = ['hardware_ids_example'] # List[str] |  (optional)
     tags = ['tags_example'] # List[str] |  (optional)
     tag_regex = 'tag_regex_example' # str |  (optional)
-    sort_by = torizon_io_api.DeviceSort() # DeviceSort |  (optional)
-    sort_direction = torizon_io_api.DeviceSortDirection() # DeviceSortDirection |  (optional)
+    sort_by = phobos_torizon_io_api.DeviceSort() # DeviceSort |  (optional)
+    sort_direction = phobos_torizon_io_api.DeviceSortDirection() # DeviceSortDirection |  (optional)
 
     try:
         # Query device information
@@ -264,14 +264,14 @@ Package reporting logic implemented as defined in: [Devices/getDevicesPackages](
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.device_info_extended import DeviceInfoExtended
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.device_info_extended import DeviceInfoExtended
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -281,14 +281,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
 
     try:
@@ -347,14 +347,14 @@ is not aware of its display name.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.device_name_request import DeviceNameRequest
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.device_name_request import DeviceNameRequest
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -364,14 +364,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
 
     try:
@@ -430,14 +430,14 @@ as a query parameter; if no devices are specified will return information for al
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.pagination_result_network_info import PaginationResultNetworkInfo
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.pagination_result_network_info import PaginationResultNetworkInfo
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -447,14 +447,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     offset = 56 # int |  (optional)
     limit = 56 # int |  (optional)
     device_uuid = ['device_uuid_example'] # List[str] |  (optional)
@@ -513,14 +513,14 @@ Retrieves network information (local IP address, MAC, hostname) for a single dev
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.network_info import NetworkInfo
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.network_info import NetworkInfo
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -530,14 +530,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
 
     try:
@@ -596,14 +596,14 @@ information about the device.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.device_notes_request import DeviceNotesRequest
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.device_notes_request import DeviceNotesRequest
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -613,14 +613,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
 
     try:
@@ -694,14 +694,14 @@ Packages are reported according to the following process:
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.pagination_result_device_packages import PaginationResultDevicePackages
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.pagination_result_device_packages import PaginationResultDevicePackages
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -711,14 +711,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     offset = 56 # int |  (optional)
     limit = 56 # int |  (optional)
     device_uuid = ['device_uuid_example'] # List[str] |  (optional)
@@ -784,14 +784,14 @@ Package reporting logic implemented as defined in: [Devices/getDevicesPackages](
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.device_packages import DevicePackages
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.device_packages import DevicePackages
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -801,14 +801,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
 
     try:
@@ -859,13 +859,13 @@ Name | Type | Description  | Notes
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -875,14 +875,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
 
     try:
@@ -945,14 +945,14 @@ to provision a device. (Like the Torizon Web App)
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.provision_info import ProvisionInfo
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.provision_info import ProvisionInfo
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -962,14 +962,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
 
     try:
         # Retrieve device provisioning token
@@ -1028,14 +1028,14 @@ installed, it will take no further action.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.queue_response import QueueResponse
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.queue_response import QueueResponse
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -1045,14 +1045,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
 
     try:
@@ -1125,14 +1125,14 @@ installed on each one, if known.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.ecu_info_response import EcuInfoResponse
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.ecu_info_response import EcuInfoResponse
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -1142,14 +1142,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
 
     try:
@@ -1210,13 +1210,13 @@ If the value of the tag/attribute is null, the tag will be deleted.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -1226,14 +1226,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
     request_body = {'key': 'request_body_example'} # Dict[str, Optional[str]] | 
 
@@ -1304,14 +1304,14 @@ Requests containing invalid tag entries will be rejected with a 400 response.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.device_create_req import DeviceCreateReq
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.device_create_req import DeviceCreateReq
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -1321,15 +1321,15 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
-    device_create_req = torizon_io_api.DeviceCreateReq() # DeviceCreateReq | 
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
+    device_create_req = phobos_torizon_io_api.DeviceCreateReq() # DeviceCreateReq | 
 
     try:
         # Manually create a new device
@@ -1392,15 +1392,15 @@ Package reporting logic implemented as defined in: [Devices/getDevicesPackages](
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.device_packages_search_params import DevicePackagesSearchParams
-from torizon_io_api.models.pagination_result_device_packages import PaginationResultDevicePackages
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.device_packages_search_params import DevicePackagesSearchParams
+from phobos_torizon_io_api.models.pagination_result_device_packages import PaginationResultDevicePackages
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -1410,17 +1410,17 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     offset = 56 # int |  (optional)
     limit = 56 # int |  (optional)
-    device_packages_search_params = torizon_io_api.DevicePackagesSearchParams() # DevicePackagesSearchParams |  (optional)
+    device_packages_search_params = phobos_torizon_io_api.DevicePackagesSearchParams() # DevicePackagesSearchParams |  (optional)
 
     try:
         # Get information about the installed packages for many devices
@@ -1485,14 +1485,14 @@ quota. If you aren't sure how hibernated devices will affect your bill, contact 
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.update_hibernation_status_request import UpdateHibernationStatusRequest
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.update_hibernation_status_request import UpdateHibernationStatusRequest
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -1502,16 +1502,16 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
-    update_hibernation_status_request = torizon_io_api.UpdateHibernationStatusRequest() # UpdateHibernationStatusRequest | 
+    update_hibernation_status_request = phobos_torizon_io_api.UpdateHibernationStatusRequest() # UpdateHibernationStatusRequest | 
 
     try:
         # Set the hibernation status of a device
@@ -1568,14 +1568,14 @@ is not aware of its display name.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.device_name_request import DeviceNameRequest
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.device_name_request import DeviceNameRequest
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -1585,16 +1585,16 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
-    device_name_request = torizon_io_api.DeviceNameRequest() # DeviceNameRequest | 
+    device_name_request = phobos_torizon_io_api.DeviceNameRequest() # DeviceNameRequest | 
 
     try:
         # Set the display name of a single device
@@ -1652,14 +1652,14 @@ web UI.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.device_notes_request import DeviceNotesRequest
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.device_notes_request import DeviceNotesRequest
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -1669,16 +1669,16 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.DevicesApi(api_client)
+    api_instance = phobos_torizon_io_api.DevicesApi(api_client)
     device_uuid = 'device_uuid_example' # str | 
-    device_notes_request = torizon_io_api.DeviceNotesRequest() # DeviceNotesRequest | 
+    device_notes_request = phobos_torizon_io_api.DeviceNotesRequest() # DeviceNotesRequest | 
 
     try:
         # Set the device notes for a specific device

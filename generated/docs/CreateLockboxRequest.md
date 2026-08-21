@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.create_lockbox_request import CreateLockboxRequest
+from phobos_torizon_io_api.models.create_lockbox_request import CreateLockboxRequest
 
 # TODO update the JSON string below
 json = "{}"

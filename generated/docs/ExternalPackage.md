@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.external_package import ExternalPackage
+from phobos_torizon_io_api.models.external_package import ExternalPackage
 
 # TODO update the JSON string below
 json = "{}"

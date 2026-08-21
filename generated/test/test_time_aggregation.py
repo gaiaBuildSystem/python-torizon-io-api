@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.time_aggregation import TimeAggregation
+from phobos_torizon_io_api.models.time_aggregation import TimeAggregation
 
 class TestTimeAggregation(unittest.TestCase):
     """TimeAggregation unit test stubs"""

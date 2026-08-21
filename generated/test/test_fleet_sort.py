@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.fleet_sort import FleetSort
+from phobos_torizon_io_api.models.fleet_sort import FleetSort
 
 class TestFleetSort(unittest.TestCase):
     """FleetSort unit test stubs"""

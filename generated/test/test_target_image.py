@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.target_image import TargetImage
+from phobos_torizon_io_api.models.target_image import TargetImage
 
 class TestTargetImage(unittest.TestCase):
     """TargetImage unit test stubs"""
@@ -35,10 +35,10 @@ class TestTargetImage(unittest.TestCase):
         model = TargetImage()
         if include_optional:
             return TargetImage(
-                image = torizon_io_api.models.image.Image(
+                image = phobos_torizon_io_api.models.image.Image(
                     filepath = '', 
-                    fileinfo = torizon_io_api.models.file_info.FileInfo(
-                        hashes = torizon_io_api.models.hashes.Hashes(
+                    fileinfo = phobos_torizon_io_api.models.file_info.FileInfo(
+                        hashes = phobos_torizon_io_api.models.hashes.Hashes(
                             sha256 = '', ), 
                         length = 56, ), ),
                 uri = '',
@@ -46,10 +46,10 @@ class TestTargetImage(unittest.TestCase):
             )
         else:
             return TargetImage(
-                image = torizon_io_api.models.image.Image(
+                image = phobos_torizon_io_api.models.image.Image(
                     filepath = '', 
-                    fileinfo = torizon_io_api.models.file_info.FileInfo(
-                        hashes = torizon_io_api.models.hashes.Hashes(
+                    fileinfo = phobos_torizon_io_api.models.file_info.FileInfo(
+                        hashes = phobos_torizon_io_api.models.hashes.Hashes(
                             sha256 = '', ), 
                         length = 56, ), ),
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),

@@ -1,5 +1,5 @@
 [project]
-name = "torizon_io_api"
+name = "phobos_torizon_io_api"
 version = "0.0.7"
 description = "Torizon OTA v2 API Endpoints"
 authors = [
@@ -40,7 +40,7 @@ extension-pkg-whitelist = "pydantic"
 
 [tool.mypy]
 files = [
-  "torizon_io_api",
+  "phobos_torizon_io_api",
   #"test",  # auto-generated tests
   "tests", # hand-written tests
 ]
@@ -78,7 +78,7 @@ disallow_any_generics = true
 
 [[tool.mypy.overrides]]
 module = [
-  "torizon_io_api.configuration",
+  "phobos_torizon_io_api.configuration",
 ]
 warn_unused_ignores = true
 strict_equality = true

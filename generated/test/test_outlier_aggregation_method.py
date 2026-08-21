@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.outlier_aggregation_method import OutlierAggregationMethod
+from phobos_torizon_io_api.models.outlier_aggregation_method import OutlierAggregationMethod
 
 class TestOutlierAggregationMethod(unittest.TestCase):
     """OutlierAggregationMethod unit test stubs"""

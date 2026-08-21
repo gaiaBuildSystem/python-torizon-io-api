@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.device_notes_request import DeviceNotesRequest
+from phobos_torizon_io_api.models.device_notes_request import DeviceNotesRequest
 
 class TestDeviceNotesRequest(unittest.TestCase):
     """DeviceNotesRequest unit test stubs"""

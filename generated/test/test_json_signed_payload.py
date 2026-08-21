@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.json_signed_payload import JsonSignedPayload
+from phobos_torizon_io_api.models.json_signed_payload import JsonSignedPayload
 
 class TestJsonSignedPayload(unittest.TestCase):
     """JsonSignedPayload unit test stubs"""
@@ -36,7 +36,7 @@ class TestJsonSignedPayload(unittest.TestCase):
         if include_optional:
             return JsonSignedPayload(
                 signatures = [
-                    torizon_io_api.models.client_signature.ClientSignature(
+                    phobos_torizon_io_api.models.client_signature.ClientSignature(
                         keyid = '', 
                         method = 'rsassa-pss-sha256', 
                         sig = '', )

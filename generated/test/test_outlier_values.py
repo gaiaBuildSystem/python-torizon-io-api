@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.outlier_values import OutlierValues
+from phobos_torizon_io_api.models.outlier_values import OutlierValues
 
 class TestOutlierValues(unittest.TestCase):
     """OutlierValues unit test stubs"""
@@ -38,7 +38,7 @@ class TestOutlierValues(unittest.TestCase):
                 metric_name = '',
                 aggregation = 'Max',
                 outliers = [
-                    torizon_io_api.models.outlier.Outlier(
+                    phobos_torizon_io_api.models.outlier.Outlier(
                         device_id = '', 
                         value = 1.337, 
                         observed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )

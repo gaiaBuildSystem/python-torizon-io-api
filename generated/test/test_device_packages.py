@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.device_packages import DevicePackages
+from phobos_torizon_io_api.models.device_packages import DevicePackages
 
 class TestDevicePackages(unittest.TestCase):
     """DevicePackages unit test stubs"""
@@ -37,9 +37,9 @@ class TestDevicePackages(unittest.TestCase):
             return DevicePackages(
                 device_uuid = '',
                 installed_packages = [
-                    torizon_io_api.models.installed_package.InstalledPackage(
+                    phobos_torizon_io_api.models.installed_package.InstalledPackage(
                         component = '', 
-                        installed = torizon_io_api.models.package.Package(
+                        installed = phobos_torizon_io_api.models.package.Package(
                             name = '', 
                             version = '', 
                             package_id = '', 

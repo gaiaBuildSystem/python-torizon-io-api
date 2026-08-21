@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.update_response import UpdateResponse
+from phobos_torizon_io_api.models.update_response import UpdateResponse
 
 class TestUpdateResponse(unittest.TestCase):
     """UpdateResponse unit test stubs"""
@@ -40,7 +40,7 @@ class TestUpdateResponse(unittest.TestCase):
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 scheduled_for = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 completed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                device_result = torizon_io_api.models.update_reported_result.UpdateReportedResult(
+                device_result = phobos_torizon_io_api.models.update_reported_result.UpdateReportedResult(
                     result_code = '', 
                     success = True, 
                     description = '', ),

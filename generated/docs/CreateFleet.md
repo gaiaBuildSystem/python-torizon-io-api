@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.create_fleet import CreateFleet
+from phobos_torizon_io_api.models.create_fleet import CreateFleet
 
 # TODO update the JSON string below
 json = "{}"

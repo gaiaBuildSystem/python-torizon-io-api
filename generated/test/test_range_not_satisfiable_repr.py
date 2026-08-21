@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.range_not_satisfiable_repr import RangeNotSatisfiableRepr
+from phobos_torizon_io_api.models.range_not_satisfiable_repr import RangeNotSatisfiableRepr
 
 class TestRangeNotSatisfiableRepr(unittest.TestCase):
     """RangeNotSatisfiableRepr unit test stubs"""

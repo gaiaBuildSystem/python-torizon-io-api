@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.device_sort_direction import DeviceSortDirection
+from phobos_torizon_io_api.models.device_sort_direction import DeviceSortDirection
 
 class TestDeviceSortDirection(unittest.TestCase):
     """DeviceSortDirection unit test stubs"""

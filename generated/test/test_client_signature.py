@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.client_signature import ClientSignature
+from phobos_torizon_io_api.models.client_signature import ClientSignature
 
 class TestClientSignature(unittest.TestCase):
     """ClientSignature unit test stubs"""

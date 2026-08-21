@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.update_create_result import UpdateCreateResult
+from phobos_torizon_io_api.models.update_create_result import UpdateCreateResult
 
 class TestUpdateCreateResult(unittest.TestCase):
     """UpdateCreateResult unit test stubs"""
@@ -36,18 +36,18 @@ class TestUpdateCreateResult(unittest.TestCase):
         if include_optional:
             return UpdateCreateResult(
                 affected = [
-                    torizon_io_api.models.simple_device_info.SimpleDeviceInfo(
+                    phobos_torizon_io_api.models.simple_device_info.SimpleDeviceInfo(
                         device_uuid = '', 
                         device_id = '', 
                         name = '', )
                     ],
                 not_affected = [
-                    torizon_io_api.models.simple_device_not_affected_info.SimpleDeviceNotAffectedInfo(
+                    phobos_torizon_io_api.models.simple_device_not_affected_info.SimpleDeviceNotAffectedInfo(
                         device_uuid = '', 
                         device_id = '', 
                         name = '', 
                         ecu_errors = {
-                            'key' : torizon_io_api.models.error_representation.ErrorRepresentation(
+                            'key' : phobos_torizon_io_api.models.error_representation.ErrorRepresentation(
                                 code = '', 
                                 description = '', 
                                 cause = null, 

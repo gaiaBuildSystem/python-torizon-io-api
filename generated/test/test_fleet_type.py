@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.fleet_type import FleetType
+from phobos_torizon_io_api.models.fleet_type import FleetType
 
 class TestFleetType(unittest.TestCase):
     """FleetType unit test stubs"""

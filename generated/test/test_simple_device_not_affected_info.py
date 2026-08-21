@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.simple_device_not_affected_info import SimpleDeviceNotAffectedInfo
+from phobos_torizon_io_api.models.simple_device_not_affected_info import SimpleDeviceNotAffectedInfo
 
 class TestSimpleDeviceNotAffectedInfo(unittest.TestCase):
     """SimpleDeviceNotAffectedInfo unit test stubs"""
@@ -39,7 +39,7 @@ class TestSimpleDeviceNotAffectedInfo(unittest.TestCase):
                 device_id = '',
                 name = '',
                 ecu_errors = {
-                    'key' : torizon_io_api.models.error_representation.ErrorRepresentation(
+                    'key' : phobos_torizon_io_api.models.error_representation.ErrorRepresentation(
                         code = '', 
                         description = '', 
                         cause = null, 
@@ -52,7 +52,7 @@ class TestSimpleDeviceNotAffectedInfo(unittest.TestCase):
                 device_id = '',
                 name = '',
                 ecu_errors = {
-                    'key' : torizon_io_api.models.error_representation.ErrorRepresentation(
+                    'key' : phobos_torizon_io_api.models.error_representation.ErrorRepresentation(
                         code = '', 
                         description = '', 
                         cause = null, 

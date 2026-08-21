@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.pagination_result_device_info_basic import PaginationResultDeviceInfoBasic
+from phobos_torizon_io_api.models.pagination_result_device_info_basic import PaginationResultDeviceInfoBasic
 
 class TestPaginationResultDeviceInfoBasic(unittest.TestCase):
     """PaginationResultDeviceInfoBasic unit test stubs"""
@@ -36,7 +36,7 @@ class TestPaginationResultDeviceInfoBasic(unittest.TestCase):
         if include_optional:
             return PaginationResultDeviceInfoBasic(
                 values = [
-                    torizon_io_api.models.device_info_basic.DeviceInfoBasic(
+                    phobos_torizon_io_api.models.device_info_basic.DeviceInfoBasic(
                         device_uuid = '', 
                         device_name = '', 
                         device_id = '', 

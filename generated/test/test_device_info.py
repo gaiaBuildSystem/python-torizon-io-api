@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.device_info import DeviceInfo
+from phobos_torizon_io_api.models.device_info import DeviceInfo
 
 class TestDeviceInfo(unittest.TestCase):
     """DeviceInfo unit test stubs"""
@@ -37,11 +37,11 @@ class TestDeviceInfo(unittest.TestCase):
             return DeviceInfo(
                 device_id = '',
                 last_api_connect = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                last_ssh_session_connect = torizon_io_api.models.last_ssh_session.LastSshSession(
+                last_ssh_session_connect = phobos_torizon_io_api.models.last_ssh_session.LastSshSession(
                     connected_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     ip_address = '', ),
                 last_version = '',
-                last_user_connect = torizon_io_api.models.user_info.UserInfo(
+                last_user_connect = phobos_torizon_io_api.models.user_info.UserInfo(
                     remote_ip = '', 
                     connected_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
             )

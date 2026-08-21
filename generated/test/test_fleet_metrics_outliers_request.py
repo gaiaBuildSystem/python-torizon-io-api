@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.fleet_metrics_outliers_request import FleetMetricsOutliersRequest
+from phobos_torizon_io_api.models.fleet_metrics_outliers_request import FleetMetricsOutliersRequest
 
 class TestFleetMetricsOutliersRequest(unittest.TestCase):
     """FleetMetricsOutliersRequest unit test stubs"""

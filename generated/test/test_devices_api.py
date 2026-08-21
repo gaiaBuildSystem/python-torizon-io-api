@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.api.devices_api import DevicesApi
+from phobos_torizon_io_api.api.devices_api import DevicesApi
 
 
 class TestDevicesApi(unittest.TestCase):

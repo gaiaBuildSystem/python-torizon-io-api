@@ -30,7 +30,7 @@ docker \
     --user 1000:1000 \
     openapitools/openapi-generator-cli \
     generate -i /local/torizon-openapi.yaml -g python -o /local/generated \
-    --additional-properties packageName=torizon_io_api \
+    --additional-properties packageName=phobos_torizon_io_api \
     --additional-properties packageVersion=x.x.x \
     --additional-properties projectName=phobos-torizon-io-api
 ```

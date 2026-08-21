@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.user_info import UserInfo
+from phobos_torizon_io_api.models.user_info import UserInfo
 
 class TestUserInfo(unittest.TestCase):
     """UserInfo unit test stubs"""

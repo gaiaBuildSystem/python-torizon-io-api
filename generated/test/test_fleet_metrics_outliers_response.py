@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.fleet_metrics_outliers_response import FleetMetricsOutliersResponse
+from phobos_torizon_io_api.models.fleet_metrics_outliers_response import FleetMetricsOutliersResponse
 
 class TestFleetMetricsOutliersResponse(unittest.TestCase):
     """FleetMetricsOutliersResponse unit test stubs"""
@@ -36,11 +36,11 @@ class TestFleetMetricsOutliersResponse(unittest.TestCase):
         if include_optional:
             return FleetMetricsOutliersResponse(
                 values = [
-                    torizon_io_api.models.outlier_values.OutlierValues(
+                    phobos_torizon_io_api.models.outlier_values.OutlierValues(
                         metric_name = '', 
                         aggregation = 'Max', 
                         outliers = [
-                            torizon_io_api.models.outlier.Outlier(
+                            phobos_torizon_io_api.models.outlier.Outlier(
                                 device_id = '', 
                                 value = 1.337, 
                                 observed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )

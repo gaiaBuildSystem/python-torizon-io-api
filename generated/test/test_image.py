@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.image import Image
+from phobos_torizon_io_api.models.image import Image
 
 class TestImage(unittest.TestCase):
     """Image unit test stubs"""
@@ -36,16 +36,16 @@ class TestImage(unittest.TestCase):
         if include_optional:
             return Image(
                 filepath = '',
-                fileinfo = torizon_io_api.models.file_info.FileInfo(
-                    hashes = torizon_io_api.models.hashes.Hashes(
+                fileinfo = phobos_torizon_io_api.models.file_info.FileInfo(
+                    hashes = phobos_torizon_io_api.models.hashes.Hashes(
                         sha256 = '', ), 
                     length = 56, )
             )
         else:
             return Image(
                 filepath = '',
-                fileinfo = torizon_io_api.models.file_info.FileInfo(
-                    hashes = torizon_io_api.models.hashes.Hashes(
+                fileinfo = phobos_torizon_io_api.models.file_info.FileInfo(
+                    hashes = phobos_torizon_io_api.models.hashes.Hashes(
                         sha256 = '', ), 
                     length = 56, ),
         )

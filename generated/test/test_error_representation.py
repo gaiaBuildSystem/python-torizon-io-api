@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.error_representation import ErrorRepresentation
+from phobos_torizon_io_api.models.error_representation import ErrorRepresentation
 
 class TestErrorRepresentation(unittest.TestCase):
     """ErrorRepresentation unit test stubs"""

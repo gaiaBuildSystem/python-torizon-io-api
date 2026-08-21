@@ -1,4 +1,4 @@
-# torizon_io_api.FleetsApi
+# phobos_torizon_io_api.FleetsApi
 
 All URIs are relative to *https://app.torizon.io/api/v2*
 
@@ -29,13 +29,13 @@ Permanently delete a fleet. Devices in the fleet are not deleted, but are no lon
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -45,14 +45,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.FleetsApi(api_client)
+    api_instance = phobos_torizon_io_api.FleetsApi(api_client)
     fleet_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
 
     try:
@@ -110,13 +110,13 @@ Note: only applicable to static fleets.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -126,14 +126,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.FleetsApi(api_client)
+    api_instance = phobos_torizon_io_api.FleetsApi(api_client)
     fleet_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
     request_body = None # List[UUID] |  (optional)
 
@@ -193,14 +193,14 @@ and sort them using the sortBy parameter.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.pagination_result_fleet import PaginationResultFleet
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.pagination_result_fleet import PaginationResultFleet
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -210,18 +210,18 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.FleetsApi(api_client)
+    api_instance = phobos_torizon_io_api.FleetsApi(api_client)
     offset = 56 # int |  (optional)
     limit = 56 # int |  (optional)
     name_contains = 'name_contains_example' # str |  (optional)
-    sort_by = torizon_io_api.FleetSort() # FleetSort |  (optional)
+    sort_by = phobos_torizon_io_api.FleetSort() # FleetSort |  (optional)
 
     try:
         # Get information about all fleets in your repository
@@ -280,14 +280,14 @@ Returns fleet info for a single fleet.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.fleet import Fleet
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.fleet import Fleet
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -297,14 +297,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.FleetsApi(api_client)
+    api_instance = phobos_torizon_io_api.FleetsApi(api_client)
     fleet_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
 
     try:
@@ -363,14 +363,14 @@ the [GET /devices](#/Devices/getDevices) endpoint.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.pagination_result_device_info_basic import PaginationResultDeviceInfoBasic
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.pagination_result_device_info_basic import PaginationResultDeviceInfoBasic
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -380,14 +380,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.FleetsApi(api_client)
+    api_instance = phobos_torizon_io_api.FleetsApi(api_client)
     fleet_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
     offset = 56 # int |  (optional)
     limit = 56 # int |  (optional)
@@ -449,14 +449,14 @@ Returns a distinct list of hardware identifiers for all ECUs of devices in the s
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.pagination_result_refined import PaginationResultRefined
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.pagination_result_refined import PaginationResultRefined
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -466,14 +466,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.FleetsApi(api_client)
+    api_instance = phobos_torizon_io_api.FleetsApi(api_client)
     fleet_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
     offset = 56 # int |  (optional)
     limit = 56 # int |  (optional)
@@ -540,14 +540,14 @@ documented yet.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.create_fleet import CreateFleet
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.create_fleet import CreateFleet
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -557,15 +557,15 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.FleetsApi(api_client)
-    create_fleet = torizon_io_api.CreateFleet() # CreateFleet | 
+    api_instance = phobos_torizon_io_api.FleetsApi(api_client)
+    create_fleet = phobos_torizon_io_api.CreateFleet() # CreateFleet | 
 
     try:
         # Create a new fleet
@@ -624,13 +624,13 @@ Note: only applicable to static fleets.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -640,14 +640,14 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.FleetsApi(api_client)
+    api_instance = phobos_torizon_io_api.FleetsApi(api_client)
     fleet_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
     request_body = None # List[UUID] |  (optional)
 
@@ -706,14 +706,14 @@ Updates fleet information.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import torizon_io_api
-from torizon_io_api.models.update_fleet import UpdateFleet
-from torizon_io_api.rest import ApiException
+import phobos_torizon_io_api
+from phobos_torizon_io_api.models.update_fleet import UpdateFleet
+from phobos_torizon_io_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     host = "https://app.torizon.io/api/v2"
 )
 
@@ -723,16 +723,16 @@ configuration = torizon_io_api.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = torizon_io_api.Configuration(
+configuration = phobos_torizon_io_api.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with torizon_io_api.ApiClient(configuration) as api_client:
+with phobos_torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = torizon_io_api.FleetsApi(api_client)
+    api_instance = phobos_torizon_io_api.FleetsApi(api_client)
     fleet_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
-    update_fleet = torizon_io_api.UpdateFleet() # UpdateFleet | 
+    update_fleet = phobos_torizon_io_api.UpdateFleet() # UpdateFleet | 
 
     try:
         # Update fleet

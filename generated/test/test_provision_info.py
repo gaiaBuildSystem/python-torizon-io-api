@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.provision_info import ProvisionInfo
+from phobos_torizon_io_api.models.provision_info import ProvisionInfo
 
 class TestProvisionInfo(unittest.TestCase):
     """ProvisionInfo unit test stubs"""

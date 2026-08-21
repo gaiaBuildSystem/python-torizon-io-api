@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.api.remote_access_api import RemoteAccessApi
+from phobos_torizon_io_api.api.remote_access_api import RemoteAccessApi
 
 
 class TestRemoteAccessApi(unittest.TestCase):

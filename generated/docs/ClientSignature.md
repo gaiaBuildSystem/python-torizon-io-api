@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.client_signature import ClientSignature
+from phobos_torizon_io_api.models.client_signature import ClientSignature
 
 # TODO update the JSON string below
 json = "{}"

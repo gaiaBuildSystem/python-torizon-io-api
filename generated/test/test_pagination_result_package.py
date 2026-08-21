@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.pagination_result_package import PaginationResultPackage
+from phobos_torizon_io_api.models.pagination_result_package import PaginationResultPackage
 
 class TestPaginationResultPackage(unittest.TestCase):
     """PaginationResultPackage unit test stubs"""
@@ -36,7 +36,7 @@ class TestPaginationResultPackage(unittest.TestCase):
         if include_optional:
             return PaginationResultPackage(
                 values = [
-                    torizon_io_api.models.package.Package(
+                    phobos_torizon_io_api.models.package.Package(
                         name = '', 
                         version = '', 
                         package_id = '', 

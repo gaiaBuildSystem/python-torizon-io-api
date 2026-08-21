@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.detailed_metric_query import DetailedMetricQuery
+from phobos_torizon_io_api.models.detailed_metric_query import DetailedMetricQuery
 
 # TODO update the JSON string below
 json = "{}"

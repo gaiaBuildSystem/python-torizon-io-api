@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.file_info import FileInfo
+from phobos_torizon_io_api.models.file_info import FileInfo
 
 class TestFileInfo(unittest.TestCase):
     """FileInfo unit test stubs"""
@@ -35,13 +35,13 @@ class TestFileInfo(unittest.TestCase):
         model = FileInfo()
         if include_optional:
             return FileInfo(
-                hashes = torizon_io_api.models.hashes.Hashes(
+                hashes = phobos_torizon_io_api.models.hashes.Hashes(
                     sha256 = '', ),
                 length = 56
             )
         else:
             return FileInfo(
-                hashes = torizon_io_api.models.hashes.Hashes(
+                hashes = phobos_torizon_io_api.models.hashes.Hashes(
                     sha256 = '', ),
                 length = 56,
         )

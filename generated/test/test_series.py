@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.series import Series
+from phobos_torizon_io_api.models.series import Series
 
 class TestSeries(unittest.TestCase):
     """Series unit test stubs"""
@@ -36,8 +36,8 @@ class TestSeries(unittest.TestCase):
         if include_optional:
             return Series(
                 name = '',
-                meta = torizon_io_api.models.series_meta.SeriesMeta(
-                    aggregation = torizon_io_api.models.time_aggregation.TimeAggregation(
+                meta = phobos_torizon_io_api.models.series_meta.SeriesMeta(
+                    aggregation = phobos_torizon_io_api.models.time_aggregation.TimeAggregation(
                         bucket = '', 
                         method = 'last', ), 
                     device_ids = [
@@ -52,8 +52,8 @@ class TestSeries(unittest.TestCase):
         else:
             return Series(
                 name = '',
-                meta = torizon_io_api.models.series_meta.SeriesMeta(
-                    aggregation = torizon_io_api.models.time_aggregation.TimeAggregation(
+                meta = phobos_torizon_io_api.models.series_meta.SeriesMeta(
+                    aggregation = phobos_torizon_io_api.models.time_aggregation.TimeAggregation(
                         bucket = '', 
                         method = 'last', ), 
                     device_ids = [

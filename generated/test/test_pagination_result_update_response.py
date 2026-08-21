@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.pagination_result_update_response import PaginationResultUpdateResponse
+from phobos_torizon_io_api.models.pagination_result_update_response import PaginationResultUpdateResponse
 
 class TestPaginationResultUpdateResponse(unittest.TestCase):
     """PaginationResultUpdateResponse unit test stubs"""
@@ -36,7 +36,7 @@ class TestPaginationResultUpdateResponse(unittest.TestCase):
         if include_optional:
             return PaginationResultUpdateResponse(
                 values = [
-                    torizon_io_api.models.update_response.UpdateResponse(
+                    phobos_torizon_io_api.models.update_response.UpdateResponse(
                         update_id = '', 
                         status = '', 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

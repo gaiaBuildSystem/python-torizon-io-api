@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.conflict_repr import ConflictRepr
+from phobos_torizon_io_api.models.conflict_repr import ConflictRepr
 
 class TestConflictRepr(unittest.TestCase):
     """ConflictRepr unit test stubs"""

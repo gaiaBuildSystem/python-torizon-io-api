@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.update_reported_result import UpdateReportedResult
+from phobos_torizon_io_api.models.update_reported_result import UpdateReportedResult
 
 class TestUpdateReportedResult(unittest.TestCase):
     """UpdateReportedResult unit test stubs"""

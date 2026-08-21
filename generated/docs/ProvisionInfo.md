@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.provision_info import ProvisionInfo
+from phobos_torizon_io_api.models.provision_info import ProvisionInfo
 
 # TODO update the JSON string below
 json = "{}"

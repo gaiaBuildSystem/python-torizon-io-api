@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.installed_package import InstalledPackage
+from phobos_torizon_io_api.models.installed_package import InstalledPackage
 
 class TestInstalledPackage(unittest.TestCase):
     """InstalledPackage unit test stubs"""
@@ -36,7 +36,7 @@ class TestInstalledPackage(unittest.TestCase):
         if include_optional:
             return InstalledPackage(
                 component = '',
-                installed = torizon_io_api.models.package.Package(
+                installed = phobos_torizon_io_api.models.package.Package(
                     name = '', 
                     version = '', 
                     package_id = '', 
@@ -57,7 +57,7 @@ class TestInstalledPackage(unittest.TestCase):
         else:
             return InstalledPackage(
                 component = '',
-                installed = torizon_io_api.models.package.Package(
+                installed = phobos_torizon_io_api.models.package.Package(
                     name = '', 
                     version = '', 
                     package_id = '', 

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.ssh_session import SshSession
+from phobos_torizon_io_api.models.ssh_session import SshSession
 
 # TODO update the JSON string below
 json = "{}"

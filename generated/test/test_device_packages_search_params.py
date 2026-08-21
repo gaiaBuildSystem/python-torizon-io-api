@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.device_packages_search_params import DevicePackagesSearchParams
+from phobos_torizon_io_api.models.device_packages_search_params import DevicePackagesSearchParams
 
 class TestDevicePackagesSearchParams(unittest.TestCase):
     """DevicePackagesSearchParams unit test stubs"""

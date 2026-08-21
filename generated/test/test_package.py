@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.package import Package
+from phobos_torizon_io_api.models.package import Package
 
 class TestPackage(unittest.TestCase):
     """Package unit test stubs"""

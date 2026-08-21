@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.update_hibernation_status_request import UpdateHibernationStatusRequest
+from phobos_torizon_io_api.models.update_hibernation_status_request import UpdateHibernationStatusRequest
 
 class TestUpdateHibernationStatusRequest(unittest.TestCase):
     """UpdateHibernationStatusRequest unit test stubs"""

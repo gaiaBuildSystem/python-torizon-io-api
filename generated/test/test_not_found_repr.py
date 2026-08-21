@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.not_found_repr import NotFoundRepr
+from phobos_torizon_io_api.models.not_found_repr import NotFoundRepr
 
 class TestNotFoundRepr(unittest.TestCase):
     """NotFoundRepr unit test stubs"""

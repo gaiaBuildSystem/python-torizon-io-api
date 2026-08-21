@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.upstream_endpoint_error_repr import UpstreamEndpointErrorRepr
+from phobos_torizon_io_api.models.upstream_endpoint_error_repr import UpstreamEndpointErrorRepr
 
 class TestUpstreamEndpointErrorRepr(unittest.TestCase):
     """UpstreamEndpointErrorRepr unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from torizon_io_api.models.network_info import NetworkInfo
+from phobos_torizon_io_api.models.network_info import NetworkInfo
 
 class TestNetworkInfo(unittest.TestCase):
     """NetworkInfo unit test stubs"""

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.error_representation import ErrorRepresentation
+from phobos_torizon_io_api.models.error_representation import ErrorRepresentation
 
 # TODO update the JSON string below
 json = "{}"

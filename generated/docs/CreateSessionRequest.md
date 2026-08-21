@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from torizon_io_api.models.create_session_request import CreateSessionRequest
+from phobos_torizon_io_api.models.create_session_request import CreateSessionRequest
 
 # TODO update the JSON string below
 json = "{}"
