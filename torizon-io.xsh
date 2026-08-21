@@ -71,7 +71,7 @@ def __get_jon_oster_token():
 
     # and we have the AWESOME Jon Oster Token 🦪
     _ret = response.json().get("access_token")
-    print(f"✅ Got Jon Oster Token: {_ret}")
+    # print(f"✅ Got Jon Oster Token: {_ret}")
     return _ret
 
 
@@ -346,6 +346,22 @@ def update_fleet_latest(package_name: str, fleet_name: str):
         print(len(_ret.affected))
 
 
+def device_remove_all():
+    with torizon_cloud.ApiClient(_cfg) as api_client:
+        _api = torizon_cloud.DevicesApi(api_client)
+        _devices = _api.get_devices(
+            limit=sys.maxsize
+        )
+
+        for device in _devices.values:
+            print(f"Deleting device {device.device_name} ({device.device_uuid}) ...")
+            _api.delete_devices_deviceuuid(
+                device_uuid=str(device.device_uuid)
+            )
+
+        print(f"✅ {len(_devices.values)} device(s) deleted")
+
+
 def _usage():
     print("")
     print("usage:")
@@ -362,6 +378,9 @@ def _usage():
     print("        package list sources")
     print("    Delete a package version by hash:")
     print("        package delete <package name> <package hash>")
+    print("")
+    print("    Remove all devices:")
+    print("        device remove all")
     print("")
     print("    Update a fleet with a defined package:")
     print("        update fleet latest <package name> <fleet name>")

@@ -6,3 +6,4 @@ python-lsp-server
 pylsp-rope
 torizon_io_api
 torizon_templates_utils
+xonsh
