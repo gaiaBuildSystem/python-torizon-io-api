@@ -24,6 +24,7 @@ from uuid import UUID
 from torizon_io_api.models.update_reported_result import UpdateReportedResult
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class UpdateResponse(BaseModel):
     """
@@ -39,7 +40,8 @@ class UpdateResponse(BaseModel):
     __properties: ClassVar[List[str]] = ["updateId", "status", "createdAt", "scheduledFor", "completedAt", "deviceResult", "packages"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -51,8 +53,7 @@ class UpdateResponse(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -80,6 +81,21 @@ class UpdateResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of device_result
         if self.device_result:
             _dict['deviceResult'] = self.device_result.to_dict()
+        # set to None if scheduled_for (nullable) is None
+        # and model_fields_set contains the field
+        if self.scheduled_for is None and "scheduled_for" in self.model_fields_set:
+            _dict['scheduledFor'] = None
+
+        # set to None if completed_at (nullable) is None
+        # and model_fields_set contains the field
+        if self.completed_at is None and "completed_at" in self.model_fields_set:
+            _dict['completedAt'] = None
+
+        # set to None if device_result (nullable) is None
+        # and model_fields_set contains the field
+        if self.device_result is None and "device_result" in self.model_fields_set:
+            _dict['deviceResult'] = None
+
         return _dict
 
     @classmethod

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **device_id** | **str** |  | 
 **hibernated** | **bool** |  | [optional] 
 **fleet_ids** | **List[UUID]** |  | [optional] 
+**tags** | **Dict[str, str]** |  | [optional] 
 
 ## Example
 

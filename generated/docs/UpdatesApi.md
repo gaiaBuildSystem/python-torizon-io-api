@@ -1,6 +1,6 @@
 # torizon_io_api.UpdatesApi
 
-All URIs are relative to *https://app.torizon.io/api/v2beta*
+All URIs are relative to *https://app.torizon.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,8 @@ Method | HTTP request | Description
 [**get_lockbox_details**](UpdatesApi.md#get_lockbox_details) | **GET** /lockbox-details | List all existing lockboxes on the repository, and their detailed contents
 [**get_lockboxes**](UpdatesApi.md#get_lockboxes) | **GET** /lockboxes | List all existing lockboxes on the repository
 [**get_lockboxes_lockbox_name**](UpdatesApi.md#get_lockboxes_lockbox_name) | **GET** /lockboxes/{lockbox_name} | Get the raw Uptane metadata for a lockbox
-[**patch_updates**](UpdatesApi.md#patch_updates) | **PATCH** /updates | Cancel a pending update for one or more devices
+[**get_updates_devices_deviceid**](UpdatesApi.md#get_updates_devices_deviceid) | **GET** /updates/devices/{deviceId} | list updates
+[**patch_updates_updateid**](UpdatesApi.md#patch_updates_updateid) | **PATCH** /updates/{updateId} | Cancel an update
 [**post_lockboxes_lockbox_name**](UpdatesApi.md#post_lockboxes_lockbox_name) | **POST** /lockboxes/{lockbox_name} | Define a new lockbox, or update an existing one
 [**post_updates**](UpdatesApi.md#post_updates) | **POST** /updates | Launch an update to one or more devices or fleets
 
@@ -31,10 +32,10 @@ import torizon_io_api
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -115,10 +116,10 @@ from torizon_io_api.models.json_signed_payload import JsonSignedPayload
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -195,10 +196,10 @@ import torizon_io_api
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -276,10 +277,10 @@ from torizon_io_api.models.json_signed_payload import JsonSignedPayload
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -341,18 +342,14 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **patch_updates**
-> List[UUID] patch_updates(request_body=request_body)
+# **get_updates_devices_deviceid**
+> PaginationResultUpdateResponse get_updates_devices_deviceid(device_id, offset=offset, limit=limit)
 
-Cancel a pending update for one or more devices
+list updates
 
 
-Cancels any pending update for a list of devices. Note that this endpoint does not accept fleet UUIDs,
-only device UUIDs.
-
-Updates can only be cancelled when they are Pending. After the device has received its update instructions,
-the update can no longer be cancelled from the server side.
-        
+List all updates created a specific device
+              
 
 ### Example
 
@@ -360,13 +357,14 @@ the update can no longer be cancelled from the server side.
 
 ```python
 import torizon_io_api
+from torizon_io_api.models.pagination_result_update_response import PaginationResultUpdateResponse
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -383,15 +381,17 @@ configuration = torizon_io_api.Configuration(
 with torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = torizon_io_api.UpdatesApi(api_client)
-    request_body = None # List[UUID] |  (optional)
+    device_id = 'device_id_example' # str | 
+    offset = 56 # int |  (optional)
+    limit = 56 # int |  (optional)
 
     try:
-        # Cancel a pending update for one or more devices
-        api_response = api_instance.patch_updates(request_body=request_body)
-        print("The response of UpdatesApi->patch_updates:\n")
+        # list updates
+        api_response = api_instance.get_updates_devices_deviceid(device_id, offset=offset, limit=limit)
+        print("The response of UpdatesApi->get_updates_devices_deviceid:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UpdatesApi->patch_updates: %s\n" % e)
+        print("Exception when calling UpdatesApi->get_updates_devices_deviceid: %s\n" % e)
 ```
 
 
@@ -401,11 +401,13 @@ with torizon_io_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request_body** | [**List[UUID]**](UUID.md)|  | [optional] 
+ **device_id** | **str**|  | 
+ **offset** | **int**|  | [optional] 
+ **limit** | **int**|  | [optional] 
 
 ### Return type
 
-**List[UUID]**
+[**PaginationResultUpdateResponse**](PaginationResultUpdateResponse.md)
 
 ### Authorization
 
@@ -413,7 +415,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -422,7 +424,88 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** | Bad Request |  -  |
-**416** | Range not Satisfiable |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_updates_updateid**
+> patch_updates_updateid(update_id)
+
+Cancel an update
+
+
+Cancels the update
+
+Updates can only be cancelled when they are Pending. After the device has received its update instructions,
+the update can no longer be cancelled from the server side.
+        
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import torizon_io_api
+from torizon_io_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
+# See configuration.py for a list of all supported configuration parameters.
+configuration = torizon_io_api.Configuration(
+    host = "https://app.torizon.io/api/v2"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = torizon_io_api.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with torizon_io_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = torizon_io_api.UpdatesApi(api_client)
+    update_id = 'update_id_example' # str | 
+
+    try:
+        # Cancel an update
+        api_instance.patch_updates_updateid(update_id)
+    except Exception as e:
+        print("Exception when calling UpdatesApi->patch_updates_updateid: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** | Bad Request |  -  |
+**409** | Conflict |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -460,10 +543,10 @@ from torizon_io_api.models.create_lockbox_request import CreateLockboxRequest
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -530,7 +613,7 @@ Launch an update to one or more devices or fleets
 
 
 This endpoint launches a software update. You can specify a list of packages to be installed, and a list of
-devices and/or fleets that the packages should be installed on. If you specify multiple packages, it will be
+devices that the packages should be installed on. If you specify multiple packages, it will be
 treated as a [synchronous update](https://developer.toradex.com/torizon/torizon-platform/torizon-updates/torizon-updates-technical-overview/#synchronous-updates-540).
 
 It is also possible to add custom metadata or a custom download URI when creating the update. This example
@@ -552,6 +635,13 @@ device, adding a custom download URI for the application package:
     "3fa85f64-5717-4562-b3fc-2c963f66afa6"
   ]
 }
+```
+
+The `fleets` attribute of the request body is deprecated. To deploy an update to a fleet, a user can
+use the POST /updates/fleets/{fleetId} endpoint.
+
+The number of devices targeted by an update is currently limited to 50 devices. A user can create a fleet
+and use a fleet update to update a bigger number of devices.
         
 
 ### Example
@@ -565,10 +655,10 @@ from torizon_io_api.models.update_request import UpdateRequest
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters

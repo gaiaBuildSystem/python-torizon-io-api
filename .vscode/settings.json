@@ -1,0 +1,8 @@
+{
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/generated"
+    ],
+    "workbench.sideBar.location": "left",
+    "python.defaultInterpreterPath": "${workspaceFolder}/generated/.venv/bin/python",
+    "pylsp.executable": "${workspaceFolder}/generated/.venv/bin/pylsp"
+}

@@ -1,6 +1,6 @@
 # torizon_io_api.PackagesApi
 
-All URIs are relative to *https://app.torizon.io/api/v2beta*
+All URIs are relative to *https://app.torizon.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_packages_external**](PackagesApi.md#get_packages_external) | **GET** /packages_external | Retrieve metadata about packages in your repository from other sources
 [**get_packages_external_info**](PackagesApi.md#get_packages_external_info) | **GET** /packages_external/info | Fetch information about external package sources
 [**get_packages_external_refresh_source_file_name**](PackagesApi.md#get_packages_external_refresh_source_file_name) | **GET** /packages_external/refresh/{source_file_name} | Refresh metadata from an external package source
+[**get_packages_packageid**](PackagesApi.md#get_packages_packageid) | **GET** /packages/{packageId} | Retrieve metadata about a single package
 [**patch_packages_packageid**](PackagesApi.md#patch_packages_packageid) | **PATCH** /packages/{packageId} | Edit metadata about a package
 [**post_packages**](PackagesApi.md#post_packages) | **POST** /packages | Upload a new package
 
@@ -33,10 +34,10 @@ import torizon_io_api
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -96,7 +97,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_packages**
-> PaginationResultComToradexApiGwDataPackagesPackage get_packages(offset=offset, limit=limit, id_contains=id_contains, name_contains=name_contains, package_source=package_source, name=name, version=version, hardware_ids=hardware_ids, hashes=hashes, package_ids=package_ids, sort_by=sort_by, sort_direction=sort_direction)
+> PaginationResultPackage get_packages(offset=offset, limit=limit, id_contains=id_contains, name_contains=name_contains, package_source=package_source, name=name, version=version, hardware_ids=hardware_ids, hashes=hashes, package_ids=package_ids, sort_by=sort_by, sort_direction=sort_direction, has_sbom=has_sbom)
 
 Retrieve metadata about packages in your repository
 
@@ -129,16 +130,14 @@ Can be sorted in various ways specified with the `sortBy` and `sortDirection` pa
 
 ```python
 import torizon_io_api
-from torizon_io_api.models.pagination_result_com_toradex_api_gw_data_packages_package import PaginationResultComToradexApiGwDataPackagesPackage
-from torizon_io_api.models.sort_direction import SortDirection
-from torizon_io_api.models.target_items_sort import TargetItemsSort
+from torizon_io_api.models.pagination_result_package import PaginationResultPackage
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -167,10 +166,11 @@ with torizon_io_api.ApiClient(configuration) as api_client:
     package_ids = ['package_ids_example'] # List[str] |  (optional)
     sort_by = torizon_io_api.TargetItemsSort() # TargetItemsSort |  (optional)
     sort_direction = torizon_io_api.SortDirection() # SortDirection |  (optional)
+    has_sbom = True # bool |  (optional)
 
     try:
         # Retrieve metadata about packages in your repository
-        api_response = api_instance.get_packages(offset=offset, limit=limit, id_contains=id_contains, name_contains=name_contains, package_source=package_source, name=name, version=version, hardware_ids=hardware_ids, hashes=hashes, package_ids=package_ids, sort_by=sort_by, sort_direction=sort_direction)
+        api_response = api_instance.get_packages(offset=offset, limit=limit, id_contains=id_contains, name_contains=name_contains, package_source=package_source, name=name, version=version, hardware_ids=hardware_ids, hashes=hashes, package_ids=package_ids, sort_by=sort_by, sort_direction=sort_direction, has_sbom=has_sbom)
         print("The response of PackagesApi->get_packages:\n")
         pprint(api_response)
     except Exception as e:
@@ -196,10 +196,11 @@ Name | Type | Description  | Notes
  **package_ids** | [**List[str]**](str.md)|  | [optional] 
  **sort_by** | [**TargetItemsSort**](.md)|  | [optional] 
  **sort_direction** | [**SortDirection**](.md)|  | [optional] 
+ **has_sbom** | **bool**|  | [optional] 
 
 ### Return type
 
-[**PaginationResultComToradexApiGwDataPackagesPackage**](PaginationResultComToradexApiGwDataPackagesPackage.md)
+[**PaginationResultPackage**](PaginationResultPackage.md)
 
 ### Authorization
 
@@ -216,11 +217,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** | Bad Request |  -  |
+**404** | Resource Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_packages_external**
-> PaginationResultComToradexApiGwDataPackagesExternalPackage get_packages_external(offset=offset, limit=limit, id_contains=id_contains)
+> PaginationResultExternalPackage get_packages_external(offset=offset, limit=limit, id_contains=id_contains)
 
 Retrieve metadata about packages in your repository from other sources
 
@@ -238,14 +240,14 @@ TorizonCore images published by Toradex. Can be filtered by package name.
 
 ```python
 import torizon_io_api
-from torizon_io_api.models.pagination_result_com_toradex_api_gw_data_packages_external_package import PaginationResultComToradexApiGwDataPackagesExternalPackage
+from torizon_io_api.models.pagination_result_external_package import PaginationResultExternalPackage
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -288,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginationResultComToradexApiGwDataPackagesExternalPackage**](PaginationResultComToradexApiGwDataPackagesExternalPackage.md)
+[**PaginationResultExternalPackage**](PaginationResultExternalPackage.md)
 
 ### Authorization
 
@@ -305,6 +307,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** |  |  -  |
 **400** | Bad Request |  -  |
+**404** | Resource Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -330,10 +333,10 @@ from torizon_io_api.models.delegation_info import DelegationInfo
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -395,7 +398,7 @@ Refresh metadata from an external package source
 
 
 This endpoint refreshes the list of packages in your repository that come from the specified external source.
-For example "tdx-nightly.json" is the external source for all Toradex-published TorizonCore nightly builds.
+For example "tdx-nightly" is the external source for all Toradex-published TorizonCore nightly builds.
 
 External package sources can expire periodically, with the expiration date set by the external publisher. This
 helps ensure that package lists remain fresh and up to date. Your devices will not install packages from an
@@ -411,10 +414,10 @@ import torizon_io_api
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -473,6 +476,88 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_packages_packageid**
+> Package get_packages_packageid(package_id)
+
+Retrieve metadata about a single package
+
+
+Should return metadata about a single package.
+        
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import torizon_io_api
+from torizon_io_api.models.package import Package
+from torizon_io_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
+# See configuration.py for a list of all supported configuration parameters.
+configuration = torizon_io_api.Configuration(
+    host = "https://app.torizon.io/api/v2"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = torizon_io_api.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with torizon_io_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = torizon_io_api.PackagesApi(api_client)
+    package_id = 'package_id_example' # str | 
+
+    try:
+        # Retrieve metadata about a single package
+        api_response = api_instance.get_packages_packageid(package_id)
+        print("The response of PackagesApi->get_packages_packageid:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PackagesApi->get_packages_packageid: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **package_id** | **str**|  | 
+
+### Return type
+
+[**Package**](Package.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** | Bad Request |  -  |
+**404** | Resource Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **patch_packages_packageid**
 > Package patch_packages_packageid(package_id, edit_package)
 
@@ -498,10 +583,10 @@ from torizon_io_api.models.package import Package
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -565,7 +650,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_packages**
-> Package post_packages(name, version, target_format, content_length, body, hardware_id=hardware_id)
+> Package post_packages(name, version, hardware_id, target_format, content_length, body)
 
 Upload a new package
 
@@ -585,10 +670,10 @@ from torizon_io_api.models.package import Package
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -607,14 +692,14 @@ with torizon_io_api.ApiClient(configuration) as api_client:
     api_instance = torizon_io_api.PackagesApi(api_client)
     name = 'name_example' # str | 
     version = 'version_example' # str | 
+    hardware_id = ['hardware_id_example'] # List[str] | 
     target_format = 'target_format_example' # str | 
     content_length = 56 # int | 
-    body = None # bytearray | 
-    hardware_id = ['hardware_id_example'] # List[str] |  (optional)
+    body = None # bytes | 
 
     try:
         # Upload a new package
-        api_response = api_instance.post_packages(name, version, target_format, content_length, body, hardware_id=hardware_id)
+        api_response = api_instance.post_packages(name, version, hardware_id, target_format, content_length, body)
         print("The response of PackagesApi->post_packages:\n")
         pprint(api_response)
     except Exception as e:
@@ -630,10 +715,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**|  | 
  **version** | **str**|  | 
+ **hardware_id** | [**List[str]**](str.md)|  | 
  **target_format** | **str**|  | 
  **content_length** | **int**|  | 
- **body** | **bytearray**|  | 
- **hardware_id** | [**List[str]**](str.md)|  | [optional] 
+ **body** | **bytes**|  | 
 
 ### Return type
 

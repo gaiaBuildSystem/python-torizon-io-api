@@ -1,6 +1,6 @@
 # torizon_io_api.RemoteAccessApi
 
-All URIs are relative to *https://app.torizon.io/api/v2beta*
+All URIs are relative to *https://app.torizon.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -34,10 +34,10 @@ import torizon_io_api
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -111,10 +111,10 @@ import torizon_io_api
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -188,10 +188,10 @@ import torizon_io_api
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -266,10 +266,10 @@ from torizon_io_api.models.device_info import DeviceInfo
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -346,10 +346,10 @@ from torizon_io_api.models.device_session import DeviceSession
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -427,10 +427,10 @@ import torizon_io_api
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -503,10 +503,10 @@ from torizon_io_api.models.public_keys import PublicKeys
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -562,7 +562,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_remote_access_user_sessions**
-> List[UserSession] get_remote_access_user_sessions()
+> PaginationResultUserSession get_remote_access_user_sessions(offset=offset, limit=limit)
 
 Fetch all sessions (and their related deviceId) for a user
 
@@ -575,14 +575,14 @@ Fetch all sessions (and their related deviceId) for a user
 
 ```python
 import torizon_io_api
-from torizon_io_api.models.user_session import UserSession
+from torizon_io_api.models.pagination_result_user_session import PaginationResultUserSession
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -599,10 +599,12 @@ configuration = torizon_io_api.Configuration(
 with torizon_io_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = torizon_io_api.RemoteAccessApi(api_client)
+    offset = 56 # int |  (optional)
+    limit = 56 # int |  (optional)
 
     try:
         # Fetch all sessions (and their related deviceId) for a user
-        api_response = api_instance.get_remote_access_user_sessions()
+        api_response = api_instance.get_remote_access_user_sessions(offset=offset, limit=limit)
         print("The response of RemoteAccessApi->get_remote_access_user_sessions:\n")
         pprint(api_response)
     except Exception as e:
@@ -613,11 +615,15 @@ with torizon_io_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **offset** | **int**|  | [optional] 
+ **limit** | **int**|  | [optional] 
 
 ### Return type
 
-[**List[UserSession]**](UserSession.md)
+[**PaginationResultUserSession**](PaginationResultUserSession.md)
 
 ### Authorization
 
@@ -626,13 +632,14 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** |  |  -  |
+**400** | Invalid value for: query parameter offset, Invalid value for: query parameter limit |  -  |
 **404** | Resource Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -660,10 +667,10 @@ from torizon_io_api.models.create_session_request import CreateSessionRequest
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -744,10 +751,10 @@ from torizon_io_api.models.ip_address_request import IpAddressRequest
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -823,10 +830,10 @@ from torizon_io_api.models.key_data import KeyData
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters

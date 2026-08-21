@@ -1,6 +1,6 @@
 # torizon_io_api.FleetsApi
 
-All URIs are relative to *https://app.torizon.io/api/v2beta*
+All URIs are relative to *https://app.torizon.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_fleets**](FleetsApi.md#get_fleets) | **GET** /fleets | Get information about all fleets in your repository
 [**get_fleets_fleetid**](FleetsApi.md#get_fleets_fleetid) | **GET** /fleets/{fleetId} | Get information about a single fleet in your repository
 [**get_fleets_fleetid_devices**](FleetsApi.md#get_fleets_fleetid_devices) | **GET** /fleets/{fleetId}/devices | Get information about the devices in a single fleet
+[**get_fleets_fleetid_hardware_ids**](FleetsApi.md#get_fleets_fleetid_hardware_ids) | **GET** /fleets/{fleetId}/hardware-ids | Get all hardware IDs for devices in a fleet
 [**post_fleets**](FleetsApi.md#post_fleets) | **POST** /fleets | Create a new fleet
 [**post_fleets_fleetid_devices**](FleetsApi.md#post_fleets_fleetid_devices) | **POST** /fleets/{fleetId}/devices | Add devices to a fleet
 [**put_fleets_fleetid**](FleetsApi.md#put_fleets_fleetid) | **PUT** /fleets/{fleetId} | Update fleet
@@ -32,10 +33,10 @@ import torizon_io_api
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -113,10 +114,10 @@ import torizon_io_api
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -178,12 +179,13 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_fleets**
-> PaginationResultComToradexApiGwDataFleet get_fleets(offset=offset, limit=limit)
+> PaginationResultFleet get_fleets(offset=offset, limit=limit, name_contains=name_contains, sort_by=sort_by)
 
 Get information about all fleets in your repository
 
 
-Returns a list of fleets along with their UUIDs.
+Returns a list of fleets along with their UUIDs. You can filter the results by name using the nameContains parameter
+and sort them using the sortBy parameter.
         
 
 ### Example
@@ -192,14 +194,14 @@ Returns a list of fleets along with their UUIDs.
 
 ```python
 import torizon_io_api
-from torizon_io_api.models.pagination_result_com_toradex_api_gw_data_fleet import PaginationResultComToradexApiGwDataFleet
+from torizon_io_api.models.pagination_result_fleet import PaginationResultFleet
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -218,10 +220,12 @@ with torizon_io_api.ApiClient(configuration) as api_client:
     api_instance = torizon_io_api.FleetsApi(api_client)
     offset = 56 # int |  (optional)
     limit = 56 # int |  (optional)
+    name_contains = 'name_contains_example' # str |  (optional)
+    sort_by = torizon_io_api.FleetSort() # FleetSort |  (optional)
 
     try:
         # Get information about all fleets in your repository
-        api_response = api_instance.get_fleets(offset=offset, limit=limit)
+        api_response = api_instance.get_fleets(offset=offset, limit=limit, name_contains=name_contains, sort_by=sort_by)
         print("The response of FleetsApi->get_fleets:\n")
         pprint(api_response)
     except Exception as e:
@@ -237,10 +241,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**|  | [optional] 
  **limit** | **int**|  | [optional] 
+ **name_contains** | **str**|  | [optional] 
+ **sort_by** | [**FleetSort**](.md)|  | [optional] 
 
 ### Return type
 
-[**PaginationResultComToradexApiGwDataFleet**](PaginationResultComToradexApiGwDataFleet.md)
+[**PaginationResultFleet**](PaginationResultFleet.md)
 
 ### Authorization
 
@@ -279,10 +285,10 @@ from torizon_io_api.models.fleet import Fleet
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -343,7 +349,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_fleets_fleetid_devices**
-> PaginationResultComToradexApiGwDataDeviceInfoBasic get_fleets_fleetid_devices(fleet_id, offset=offset, limit=limit)
+> PaginationResultDeviceInfoBasic get_fleets_fleetid_devices(fleet_id, offset=offset, limit=limit)
 
 Get information about the devices in a single fleet
 
@@ -358,14 +364,14 @@ the [GET /devices](#/Devices/getDevices) endpoint.
 
 ```python
 import torizon_io_api
-from torizon_io_api.models.pagination_result_com_toradex_api_gw_data_device_info_basic import PaginationResultComToradexApiGwDataDeviceInfoBasic
+from torizon_io_api.models.pagination_result_device_info_basic import PaginationResultDeviceInfoBasic
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -408,7 +414,93 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginationResultComToradexApiGwDataDeviceInfoBasic**](PaginationResultComToradexApiGwDataDeviceInfoBasic.md)
+[**PaginationResultDeviceInfoBasic**](PaginationResultDeviceInfoBasic.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** | Bad Request |  -  |
+**404** | Resource Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_fleets_fleetid_hardware_ids**
+> PaginationResultRefined get_fleets_fleetid_hardware_ids(fleet_id, offset=offset, limit=limit)
+
+Get all hardware IDs for devices in a fleet
+
+
+Returns a distinct list of hardware identifiers for all ECUs of devices in the specified fleet.
+        
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import torizon_io_api
+from torizon_io_api.models.pagination_result_refined import PaginationResultRefined
+from torizon_io_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
+# See configuration.py for a list of all supported configuration parameters.
+configuration = torizon_io_api.Configuration(
+    host = "https://app.torizon.io/api/v2"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = torizon_io_api.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with torizon_io_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = torizon_io_api.FleetsApi(api_client)
+    fleet_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | 
+    offset = 56 # int |  (optional)
+    limit = 56 # int |  (optional)
+
+    try:
+        # Get all hardware IDs for devices in a fleet
+        api_response = api_instance.get_fleets_fleetid_hardware_ids(fleet_id, offset=offset, limit=limit)
+        print("The response of FleetsApi->get_fleets_fleetid_hardware_ids:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling FleetsApi->get_fleets_fleetid_hardware_ids: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fleet_id** | **UUID**|  | 
+ **offset** | **int**|  | [optional] 
+ **limit** | **int**|  | [optional] 
+
+### Return type
+
+[**PaginationResultRefined**](PaginationResultRefined.md)
 
 ### Authorization
 
@@ -453,10 +545,10 @@ from torizon_io_api.models.create_fleet import CreateFleet
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -536,10 +628,10 @@ import torizon_io_api
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -619,10 +711,10 @@ from torizon_io_api.models.update_fleet import UpdateFleet
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters

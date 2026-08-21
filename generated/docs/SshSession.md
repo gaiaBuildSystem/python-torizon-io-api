@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **reverse_port** | **int** |  | 
 **ra_server_url** | **str** |  | 
 **ra_server_ssh_pub_key** | **str** |  | 
+**reverse_server_url** | **str** |  | 
 **expires_at** | **datetime** |  | 
 
 ## Example

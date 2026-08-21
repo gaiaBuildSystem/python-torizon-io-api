@@ -37,24 +37,8 @@
         },
         {
             "label": "generate",
-            "command": "docker",
+            "command": "${workspaceFolder}/scripts/generate.sh",
             "type": "shell",
-            "args": [
-                "run",
-                "--rm",
-                "-v",
-                "${workspaceFolder}:/local",
-                "--user",
-                "1000:1000",
-                "openapitools/openapi-generator-cli:latest",
-                "generate",
-                "-i", "/local/torizon-openapi.yaml",
-                "-g", "python",
-                "-o", "/local/generated",
-                "--additional-properties", "packageName=torizon_io_api",
-                "--additional-properties", "packageVersion=0.0.7",
-                "--additional-properties", "projectName=torizon-io-api"
-            ],
             "problemMatcher": [
                 "$tsc"
             ],
@@ -112,6 +96,74 @@
                 "build-package"
             ],
             "group": "build"
+        },
+        {
+            "label": "create-generated-python-env",
+            "hide": true,
+            "command": "python",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/generated"
+            },
+            "args": [
+                "-m",
+                "venv",
+                ".venv"
+            ]
+        },
+        {
+            "label": "install-generated-python-dependencies",
+            "command": "${workspaceFolder}/generated/.venv/bin/python",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/generated"
+            },
+            "args": [
+                "-m",
+                "pip",
+                "install",
+                "-r",
+                "../requirements.txt"
+            ],
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "create-generated-python-env"
+            ]
+        },
+        {
+            "label": "run-torizon-io",
+            "command": "${workspaceFolder}/generated/.venv/bin/xonsh",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PYTHONPATH": "${workspaceFolder}/generated${pathSeparator}${env:PYTHONPATH}"
+                }
+            },
+            "args": [
+                "-c",
+                "import shlex, sys; script_path = sys.argv[-2]; sys.argv = [script_path, *shlex.split(sys.argv[-1])]; execx(open(script_path).read(), filename=script_path)",
+                "torizon-io.xsh",
+                "${input:torizon-io-arguments}"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "focus": true,
+                "clear": true
+            },
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "install-generated-python-dependencies"
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "torizon-io-arguments",
+            "type": "promptString",
+            "description": "Arguments for torizon-io.xsh",
+            "default": "package list <package-name>"
         }
     ]
 }

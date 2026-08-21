@@ -1,6 +1,6 @@
 # torizon_io_api.DevicesApi
 
-All URIs are relative to *https://app.torizon.io/api/v2beta*
+All URIs are relative to *https://app.torizon.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,10 +13,13 @@ Method | HTTP request | Description
 [**get_devices_notes_deviceuuid**](DevicesApi.md#get_devices_notes_deviceuuid) | **GET** /devices/notes/{deviceUuid} | Get the device notes for a specific device
 [**get_devices_packages**](DevicesApi.md#get_devices_packages) | **GET** /devices/packages | Get information about the installed packages for many devices
 [**get_devices_packages_deviceuuid**](DevicesApi.md#get_devices_packages_deviceuuid) | **GET** /devices/packages/{deviceUuid} | Get information about the installed packages for a single device
+[**get_devices_tags_deviceuuid**](DevicesApi.md#get_devices_tags_deviceuuid) | **GET** /devices/tags/{deviceUuid} | 
 [**get_devices_token**](DevicesApi.md#get_devices_token) | **GET** /devices/token | Retrieve device provisioning token
 [**get_devices_uptane_deviceuuid_assignment**](DevicesApi.md#get_devices_uptane_deviceuuid_assignment) | **GET** /devices/uptane/{deviceUuid}/assignment | Show detailed information about the currently-assigned update for a single device
 [**get_devices_uptane_deviceuuid_components**](DevicesApi.md#get_devices_uptane_deviceuuid_components) | **GET** /devices/uptane/{deviceUuid}/components | Get a list of the software components reported by a single device
+[**patch_devices_tags_deviceuuid**](DevicesApi.md#patch_devices_tags_deviceuuid) | **PATCH** /devices/tags/{deviceUuid} | Update the tags/attributes for a specific device
 [**post_devices**](DevicesApi.md#post_devices) | **POST** /devices | Manually create a new device
+[**post_devices_packages**](DevicesApi.md#post_devices_packages) | **POST** /devices/packages | Get information about the installed packages for many devices
 [**put_devices_hibernation_deviceuuid**](DevicesApi.md#put_devices_hibernation_deviceuuid) | **PUT** /devices/hibernation/{deviceUuid} | Set the hibernation status of a device
 [**put_devices_name_deviceuuid**](DevicesApi.md#put_devices_name_deviceuuid) | **PUT** /devices/name/{deviceUuid} | Set the display name of a single device
 [**put_devices_notes_deviceuuid**](DevicesApi.md#put_devices_notes_deviceuuid) | **PUT** /devices/notes/{deviceUuid} | Set the device notes for a specific device
@@ -41,10 +44,10 @@ import torizon_io_api
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -103,12 +106,12 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_devices**
-> PaginationResultComToradexApiGwDataDeviceInfoBasic get_devices(offset=offset, limit=limit, device_uuid=device_uuid, device_id=device_id, name_contains=name_contains, hibernated=hibernated, status=status, activated_after=activated_after, activated_before=activated_before, last_seen_start=last_seen_start, last_seen_end=last_seen_end, created_at_start=created_at_start, created_at_end=created_at_end, hardware_ids=hardware_ids, sort_by=sort_by, sort_direction=sort_direction)
+> PaginationResultDeviceInfoBasic get_devices(offset=offset, limit=limit, device_uuid=device_uuid, device_id=device_id, name_contains=name_contains, hibernated=hibernated, status=status, activated_after=activated_after, activated_before=activated_before, last_seen_start=last_seen_start, last_seen_end=last_seen_end, created_at_start=created_at_start, created_at_end=created_at_end, hardware_ids=hardware_ids, tags=tags, tag_regex=tag_regex, sort_by=sort_by, sort_direction=sort_direction)
 
 Query device information
 
 
-Retrieves a list of devices in your repository. This endpoint has two different modes of operation. 
+Retrieves a list of devices in your repository. This endpoint has two different modes of operation.
 
 * You can specify `deviceId`s and/or `deviceUuid`s any number of times as query parameters, and all
 devices matching those ids will be returned.
@@ -123,7 +126,15 @@ filter parameters you specify will be returned. Available filter parameters:
     * `lastSeenEnd`
     * `createdAtStart`
     * `createdAtEnd`
-        
+    * `tags`
+    * `tagRegex`
+
+    When specifying `tags`, you cannot specify any other filter parameter. `tags` must have the format `<tagid>=<tag value>`
+
+    The `tagRegex` parameter allows filtering devices by tag name and a regular expression pattern for the tag value.
+    Format: `<tag_name>=<regex_pattern>` where `tag_name` must be a valid tag identifier ([\w\-_]{1,20})
+    and `regex_pattern` is a valid regular expression (up to 50 characters) that will be matched against the tag value.
+    
 
 ### Example
 
@@ -131,17 +142,14 @@ filter parameters you specify will be returned. Available filter parameters:
 
 ```python
 import torizon_io_api
-from torizon_io_api.models.device_sort import DeviceSort
-from torizon_io_api.models.device_sort_direction import DeviceSortDirection
-from torizon_io_api.models.device_status import DeviceStatus
-from torizon_io_api.models.pagination_result_com_toradex_api_gw_data_device_info_basic import PaginationResultComToradexApiGwDataDeviceInfoBasic
+from torizon_io_api.models.pagination_result_device_info_basic import PaginationResultDeviceInfoBasic
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -172,12 +180,14 @@ with torizon_io_api.ApiClient(configuration) as api_client:
     created_at_start = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     created_at_end = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     hardware_ids = ['hardware_ids_example'] # List[str] |  (optional)
+    tags = ['tags_example'] # List[str] |  (optional)
+    tag_regex = 'tag_regex_example' # str |  (optional)
     sort_by = torizon_io_api.DeviceSort() # DeviceSort |  (optional)
     sort_direction = torizon_io_api.DeviceSortDirection() # DeviceSortDirection |  (optional)
 
     try:
         # Query device information
-        api_response = api_instance.get_devices(offset=offset, limit=limit, device_uuid=device_uuid, device_id=device_id, name_contains=name_contains, hibernated=hibernated, status=status, activated_after=activated_after, activated_before=activated_before, last_seen_start=last_seen_start, last_seen_end=last_seen_end, created_at_start=created_at_start, created_at_end=created_at_end, hardware_ids=hardware_ids, sort_by=sort_by, sort_direction=sort_direction)
+        api_response = api_instance.get_devices(offset=offset, limit=limit, device_uuid=device_uuid, device_id=device_id, name_contains=name_contains, hibernated=hibernated, status=status, activated_after=activated_after, activated_before=activated_before, last_seen_start=last_seen_start, last_seen_end=last_seen_end, created_at_start=created_at_start, created_at_end=created_at_end, hardware_ids=hardware_ids, tags=tags, tag_regex=tag_regex, sort_by=sort_by, sort_direction=sort_direction)
         print("The response of DevicesApi->get_devices:\n")
         pprint(api_response)
     except Exception as e:
@@ -205,12 +215,14 @@ Name | Type | Description  | Notes
  **created_at_start** | **datetime**|  | [optional] 
  **created_at_end** | **datetime**|  | [optional] 
  **hardware_ids** | [**List[str]**](str.md)|  | [optional] 
+ **tags** | [**List[str]**](str.md)|  | [optional] 
+ **tag_regex** | **str**|  | [optional] 
  **sort_by** | [**DeviceSort**](.md)|  | [optional] 
  **sort_direction** | [**DeviceSortDirection**](.md)|  | [optional] 
 
 ### Return type
 
-[**PaginationResultComToradexApiGwDataDeviceInfoBasic**](PaginationResultComToradexApiGwDataDeviceInfoBasic.md)
+[**PaginationResultDeviceInfoBasic**](PaginationResultDeviceInfoBasic.md)
 
 ### Authorization
 
@@ -243,6 +255,8 @@ Shows all available information about a single device. Included information:
 * Installed packages, if known
 * Network information (local IP address, MAC, hostname)
 * Device tags, if any
+
+Package reporting logic implemented as defined in: [Devices/getDevicesPackages](#/Devices/getDevicesPackages)
         
 
 ### Example
@@ -255,10 +269,10 @@ from torizon_io_api.models.device_info_extended import DeviceInfoExtended
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -338,10 +352,10 @@ from torizon_io_api.models.device_name_request import DeviceNameRequest
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -402,7 +416,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_devices_network**
-> PaginationResultComToradexApiGwDataNetworkInfo get_devices_network(offset=offset, limit=limit, device_uuid=device_uuid)
+> PaginationResultNetworkInfo get_devices_network(offset=offset, limit=limit, device_uuid=device_uuid)
 
 Get network information for many devices
 
@@ -417,14 +431,14 @@ as a query parameter; if no devices are specified will return information for al
 
 ```python
 import torizon_io_api
-from torizon_io_api.models.pagination_result_com_toradex_api_gw_data_network_info import PaginationResultComToradexApiGwDataNetworkInfo
+from torizon_io_api.models.pagination_result_network_info import PaginationResultNetworkInfo
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -467,7 +481,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginationResultComToradexApiGwDataNetworkInfo**](PaginationResultComToradexApiGwDataNetworkInfo.md)
+[**PaginationResultNetworkInfo**](PaginationResultNetworkInfo.md)
 
 ### Authorization
 
@@ -504,10 +518,10 @@ from torizon_io_api.models.network_info import NetworkInfo
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -587,10 +601,10 @@ from torizon_io_api.models.device_notes_request import DeviceNotesRequest
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -651,14 +665,29 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_devices_packages**
-> PaginationResultComToradexApiGwDataDevicePackages get_devices_packages(offset=offset, limit=limit, device_uuid=device_uuid, name_contains=name_contains)
+> PaginationResultDevicePackages get_devices_packages(offset=offset, limit=limit, device_uuid=device_uuid, name_contains=name_contains)
 
 Get information about the installed packages for many devices
 
 
 Returns a list of devices and the packages those devices have installed. A list of devices can be specified as
 a query parameter; if no devices are specified will return information for all devices in the repository.
-        
+
+Packages are reported according to the following process:
+
+1. The image repository is searched using the package hash provided by the device.
+2. The search results are evaluated according to these rules:
+
+   - **Single match**
+     If exactly one package is found matching the hash, this package will be reported.
+
+   - **Multiple matches**
+     - If one of the matching packages also matches the `packageId` reported by the device, that package will be reported.
+     - If none of the matching packages correspond to the device’s `packageId`, the package with the first `packageId` in alphabetical order will be reported.
+
+   - **No matches**
+     If no packages are found matching the hash, it will be reported that the package is not present in the repository.
+
 
 ### Example
 
@@ -666,14 +695,14 @@ a query parameter; if no devices are specified will return information for all d
 
 ```python
 import torizon_io_api
-from torizon_io_api.models.pagination_result_com_toradex_api_gw_data_device_packages import PaginationResultComToradexApiGwDataDevicePackages
+from torizon_io_api.models.pagination_result_device_packages import PaginationResultDevicePackages
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -718,7 +747,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginationResultComToradexApiGwDataDevicePackages**](PaginationResultComToradexApiGwDataDevicePackages.md)
+[**PaginationResultDevicePackages**](PaginationResultDevicePackages.md)
 
 ### Authorization
 
@@ -747,6 +776,9 @@ Get information about the installed packages for a single device
 
 Returns a list of the packages installed on the device.
 
+Package reporting logic implemented as defined in: [Devices/getDevicesPackages](#/Devices/getDevicesPackages)
+"
+
 ### Example
 
 * Bearer Authentication (BearerAuth):
@@ -757,10 +789,10 @@ from torizon_io_api.models.device_packages import DevicePackages
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -819,6 +851,80 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_devices_tags_deviceuuid**
+> Dict[str, str] get_devices_tags_deviceuuid(device_uuid)
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import torizon_io_api
+from torizon_io_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
+# See configuration.py for a list of all supported configuration parameters.
+configuration = torizon_io_api.Configuration(
+    host = "https://app.torizon.io/api/v2"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = torizon_io_api.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with torizon_io_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = torizon_io_api.DevicesApi(api_client)
+    device_uuid = 'device_uuid_example' # str | 
+
+    try:
+        api_response = api_instance.get_devices_tags_deviceuuid(device_uuid)
+        print("The response of DevicesApi->get_devices_tags_deviceuuid:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DevicesApi->get_devices_tags_deviceuuid: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device_uuid** | **str**|  | 
+
+### Return type
+
+**Dict[str, str]**
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** | Bad Request |  -  |
+**404** | Resource Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_devices_token**
 > ProvisionInfo get_devices_token()
 
@@ -844,10 +950,10 @@ from torizon_io_api.models.provision_info import ProvisionInfo
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -927,10 +1033,10 @@ from torizon_io_api.models.queue_response import QueueResponse
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1024,10 +1130,10 @@ from torizon_io_api.models.ecu_info_response import EcuInfoResponse
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1087,8 +1193,92 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **patch_devices_tags_deviceuuid**
+> patch_devices_tags_deviceuuid(device_uuid, request_body)
+
+Update the tags/attributes for a specific device
+
+
+Updates the tags/attributes for a specific device. If a tag already exists, it's value will be overwritten,
+otherwise the tag will be created.
+
+If the value of the tag/attribute is null, the tag will be deleted.
+        
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import torizon_io_api
+from torizon_io_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
+# See configuration.py for a list of all supported configuration parameters.
+configuration = torizon_io_api.Configuration(
+    host = "https://app.torizon.io/api/v2"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = torizon_io_api.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with torizon_io_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = torizon_io_api.DevicesApi(api_client)
+    device_uuid = 'device_uuid_example' # str | 
+    request_body = {'key': 'request_body_example'} # Dict[str, Optional[str]] | 
+
+    try:
+        # Update the tags/attributes for a specific device
+        api_instance.patch_devices_tags_deviceuuid(device_uuid, request_body)
+    except Exception as e:
+        print("Exception when calling DevicesApi->patch_devices_tags_deviceuuid: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device_uuid** | **str**|  | 
+ **request_body** | [**Dict[str, Optional[str]]**](str.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** | Bad Request |  -  |
+**404** | Resource Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **post_devices**
-> bytearray post_devices(device_create_req)
+> bytes post_devices(device_create_req)
 
 Manually create a new device
 
@@ -1103,6 +1293,10 @@ credentials onto each device.
 `deviceId` must be specified. `deviceName` is optional; if not specified a random name will be generated.
 The `hibernated` parameter is optional, and defaults to `false`. If `hibernated` is set to `true`,
 the device will automatically be placed in hibernation mode as soon as it is created.
+
+The `tags` field is optional. If provided, the specified tags will be assigned to the device upon creation.
+Tag keys must match `[\w\-_]+` and be at most 20 characters; tag values must match `[\w\-_/ ]+` and be at most 50 characters.
+Requests containing invalid tag entries will be rejected with a 400 response.
         
 
 ### Example
@@ -1115,10 +1309,10 @@ from torizon_io_api.models.device_create_req import DeviceCreateReq
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1157,7 +1351,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -1176,6 +1370,99 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **404** | Resource Not Found |  -  |
 **409** | Conflict |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_devices_packages**
+> PaginationResultDevicePackages post_devices_packages(offset=offset, limit=limit, device_packages_search_params=device_packages_search_params)
+
+Get information about the installed packages for many devices
+
+
+Returns a list of devices and the packages those devices have installed. A list of devices can be specified
+using the request body; if no devices are specified will return information for all devices in the repository.
+
+The number of provided deviceUuids in the request body is limited to 100
+
+Package reporting logic implemented as defined in: [Devices/getDevicesPackages](#/Devices/getDevicesPackages)
+
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import torizon_io_api
+from torizon_io_api.models.device_packages_search_params import DevicePackagesSearchParams
+from torizon_io_api.models.pagination_result_device_packages import PaginationResultDevicePackages
+from torizon_io_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
+# See configuration.py for a list of all supported configuration parameters.
+configuration = torizon_io_api.Configuration(
+    host = "https://app.torizon.io/api/v2"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = torizon_io_api.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with torizon_io_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = torizon_io_api.DevicesApi(api_client)
+    offset = 56 # int |  (optional)
+    limit = 56 # int |  (optional)
+    device_packages_search_params = torizon_io_api.DevicePackagesSearchParams() # DevicePackagesSearchParams |  (optional)
+
+    try:
+        # Get information about the installed packages for many devices
+        api_response = api_instance.post_devices_packages(offset=offset, limit=limit, device_packages_search_params=device_packages_search_params)
+        print("The response of DevicesApi->post_devices_packages:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DevicesApi->post_devices_packages: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **offset** | **int**|  | [optional] 
+ **limit** | **int**|  | [optional] 
+ **device_packages_search_params** | [**DevicePackagesSearchParams**](DevicePackagesSearchParams.md)|  | [optional] 
+
+### Return type
+
+[**PaginationResultDevicePackages**](PaginationResultDevicePackages.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+**400** | Bad Request |  -  |
+**404** | Resource Not Found |  -  |
+**416** | Range not Satisfiable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1203,10 +1490,10 @@ from torizon_io_api.models.update_hibernation_status_request import UpdateHibern
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1286,10 +1573,10 @@ from torizon_io_api.models.device_name_request import DeviceNameRequest
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1370,10 +1657,10 @@ from torizon_io_api.models.device_notes_request import DeviceNotesRequest
 from torizon_io_api.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://app.torizon.io/api/v2beta
+# Defining the host is optional and defaults to https://app.torizon.io/api/v2
 # See configuration.py for a list of all supported configuration parameters.
 configuration = torizon_io_api.Configuration(
-    host = "https://app.torizon.io/api/v2beta"
+    host = "https://app.torizon.io/api/v2"
 )
 
 # The client must configure the authentication and authorization parameters
